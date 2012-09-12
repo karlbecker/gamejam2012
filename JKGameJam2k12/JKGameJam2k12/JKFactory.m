@@ -11,15 +11,15 @@
 @implementation JKFactory
 
 -(float)pollution {
-	return 3;
+	return 0.3;
 }
 
 -(unsigned int)cost {
-	return 300;
+	return 225;
 }
 
 -(float)profit {
-	return 30;
+	return 50;
 }
 
 @end
