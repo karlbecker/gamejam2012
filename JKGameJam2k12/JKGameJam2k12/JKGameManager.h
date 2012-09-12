@@ -27,4 +27,6 @@
 
 -(BOOL)remove:(int)numberToRemove fromPlotIndex:(int)index;
 
+-(int)heightAtPlotIndex:(int)index;
+
 @end

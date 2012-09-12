@@ -9,9 +9,12 @@
 #import "JKMainGameViewController.h"
 #import "JKGameManager.h"
 
+#define ANIMATION_DURATION 0.1
+
 @interface JKMainGameViewController ()
 
 -(int)indexOfPlotViewAtPoint:(CGPoint)point;
+-(void)moveView:(UIView*)view toTopOfPlot:(int)index;
 
 @end
 
@@ -74,6 +77,17 @@
 			continue;
 	}
 	return -1;
+}
+
+-(void)moveView:(UIView*)view toTopOfPlot:(int)index {
+	UIView* plotView = [self.plotViews objectAtIndex:index];
+	
+	[UIView animateWithDuration:ANIMATION_DURATION animations:^{
+		CGRect frame = plotView.frame;
+		float heightOfGrowthImage = view.frame.size.height;
+		frame.origin.y -= [self.gameManager heightAtPlotIndex:index] * heightOfGrowthImage;
+		view.frame = frame;
+	} completion:nil];
 }
 
 @end

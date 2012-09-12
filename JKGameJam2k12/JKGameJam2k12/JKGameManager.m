@@ -121,4 +121,13 @@
 	return YES;
 }
 
+-(int)heightAtPlotIndex:(int)index {
+	if (index >= MAXIMUM_NUMBER_OF_PLOTS)
+		return 0;
+	
+	JKPlot* plot = [self.plots objectAtIndex:index];
+	
+	return plot.height;
+}
+
 @end
