@@ -25,5 +25,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *finalScoreLabel;
 - (IBAction)restartButtonTapped:(id)sender;
 
+@property (retain, nonatomic) NSMutableArray *viewsToClearOnNewGame;
 
 @end

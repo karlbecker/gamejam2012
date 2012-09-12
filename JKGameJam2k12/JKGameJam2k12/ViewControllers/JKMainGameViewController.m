@@ -35,6 +35,7 @@
 @synthesize pollutionView;
 @synthesize restartButton;
 @synthesize finalScoreLabel;
+@synthesize viewsToClearOnNewGame;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -66,6 +67,7 @@
 	panGestureRecognizer.maximumNumberOfTouches = 1;
 	[factoryStartView addGestureRecognizer:panGestureRecognizer];
 	
+	self.viewsToClearOnNewGame = [NSMutableArray arrayWithCapacity:0];
 	
 	[self restartGame];
 }
@@ -98,15 +100,22 @@
 -(void)notifyGameStateUpdate:(NSNotification*)note {
 	self.moneyLabel.text = [NSString stringWithFormat:@"$%i", self.gameManager.cash];
 	[UIView animateWithDuration:SECONDS_BETWEEN_ROUNDS animations:^(){
-		self.pollutionView.frame = CGRectMake(self.pollutionView.frame.origin.x, self.pollutionView.frame.origin.y, self.pollutionView.frame.size.width,
-											  (self.groundView.frame.origin.y - self.groundView.frame.size.height - self.pollutionView.frame.origin.y) * self.gameManager.pollutionPercent);
+		self.pollutionView.frame = CGRectMake(self.pollutionView.frame.origin.x, fmaxf(self.pollutionView.frame.origin.y, 0.0) , self.pollutionView.frame.size.width,
+											  (self.groundView.frame.origin.y - fmaxf(self.pollutionView.frame.origin.y, 0.0)) * self.gameManager.pollutionPercent);
 	}];
 	
 	if( self.gameManager.isGameOver )
 	{
+		[UIView animateWithDuration:SECONDS_BETWEEN_ROUNDS animations:^(){
+			self.pollutionView.frame = CGRectMake(self.pollutionView.frame.origin.x, fmaxf(self.pollutionView.frame.origin.y, 0.0) , self.pollutionView.frame.size.width,
+												  (self.groundView.frame.origin.y - fmaxf(self.pollutionView.frame.origin.y, 0.0)) * self.gameManager.pollutionPercent);
+		}];
+		
 		restartButton.hidden = NO;
 		finalScoreLabel.text = [NSString stringWithFormat:@"You lasted %i years!", self.gameManager.elapsedRounds];
 		finalScoreLabel.hidden = NO;
+		[self.view bringSubviewToFront:restartButton];
+		[self.view bringSubviewToFront:finalScoreLabel];
 	}
 }
 
@@ -156,6 +165,17 @@
 		return [JKFactory new];
 }
 
+- (void)reseatDraggedView:(UIView *)view animated:(BOOL)isAnimated
+{
+	float duration = ANIMATION_DURATION;
+	if( !isAnimated )
+	{
+		duration = 0.0;
+	}
+		[UIImageView animateWithDuration:duration animations:^(){
+			view.center = startDragPoint;
+		}];
+}
 
 #pragma mark - Gesture Recognizer responses
 
@@ -180,15 +200,14 @@
 		{
 			UIImageView *newSprite = [[UIImageView alloc] initWithImage:dragView.image];
 			newSprite.frame = dragView.frame;
+			[self.viewsToClearOnNewGame addObject:newSprite];
 			[self.view addSubview:newSprite];
 			
 			[self.view bringSubviewToFront:pollutionView];
 			if( [self dropView:newSprite withGrowthType:[self growthTypeOf:dragView] atPoint:dragView.center] )
 			{
 				dragView.center = CGPointMake(startDragPoint.x - dragView.frame.size.width, startDragPoint.y);
-				[UIImageView animateWithDuration:ANIMATION_DURATION animations:^(){
-					dragView.center = startDragPoint;
-				}];
+				[self reseatDraggedView:dragView animated:YES];
 				return;
 			}
 			else
@@ -196,9 +215,7 @@
 				[newSprite removeFromSuperview];
 			}
 		}
-		[UIImageView animateWithDuration:ANIMATION_DURATION animations:^(){
-			dragView.center = startDragPoint;
-		}];
+		[self reseatDraggedView:dragView animated:YES];
 	}
 }
 
@@ -206,6 +223,10 @@
 {
 	restartButton.hidden = YES;
 	finalScoreLabel.hidden = YES;
+	
+	[self.viewsToClearOnNewGame makeObjectsPerformSelector:@selector(removeFromSuperview)];
+	[self.viewsToClearOnNewGame removeAllObjects];
+	
 	self.gameManager = [JKGameManager new];
 	[self.gameManager start];
 }
