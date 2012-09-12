@@ -10,6 +10,7 @@
 		1A7C5D781600443C0009795A /* JKGameManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7C5D771600443C0009795A /* JKGameManager.m */; };
 		1A7C5D7B160044CD0009795A /* JKGrowthType.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7C5D7A160044CD0009795A /* JKGrowthType.m */; };
 		1A7C5D7E160045850009795A /* JKPlot.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7C5D7D160045850009795A /* JKPlot.m */; };
+		1A7C5D81160049320009795A /* JKCow.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7C5D80160049320009795A /* JKCow.m */; };
 		40CC7630160042BD00CDDD7A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40CC762F160042BD00CDDD7A /* UIKit.framework */; };
 		40CC7632160042BD00CDDD7A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40CC7631160042BD00CDDD7A /* Foundation.framework */; };
 		40CC7634160042BD00CDDD7A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40CC7633160042BD00CDDD7A /* CoreGraphics.framework */; };
@@ -43,6 +44,8 @@
 		1A7C5D7A160044CD0009795A /* JKGrowthType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKGrowthType.m; sourceTree = "<group>"; };
 		1A7C5D7C160045850009795A /* JKPlot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKPlot.h; sourceTree = "<group>"; };
 		1A7C5D7D160045850009795A /* JKPlot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKPlot.m; sourceTree = "<group>"; };
+		1A7C5D7F160049320009795A /* JKCow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKCow.h; sourceTree = "<group>"; };
+		1A7C5D80160049320009795A /* JKCow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKCow.m; sourceTree = "<group>"; };
 		40CC762B160042BD00CDDD7A /* JKGameJam2k12.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JKGameJam2k12.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40CC762F160042BD00CDDD7A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		40CC7631160042BD00CDDD7A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -98,6 +101,8 @@
 				1A7C5D7A160044CD0009795A /* JKGrowthType.m */,
 				1A7C5D7C160045850009795A /* JKPlot.h */,
 				1A7C5D7D160045850009795A /* JKPlot.m */,
+				1A7C5D7F160049320009795A /* JKCow.h */,
+				1A7C5D80160049320009795A /* JKCow.m */,
 			);
 			name = GameManager;
 			sourceTree = "<group>";
@@ -292,6 +297,7 @@
 				1A7C5D781600443C0009795A /* JKGameManager.m in Sources */,
 				1A7C5D7B160044CD0009795A /* JKGrowthType.m in Sources */,
 				1A7C5D7E160045850009795A /* JKPlot.m in Sources */,
+				1A7C5D81160049320009795A /* JKCow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
