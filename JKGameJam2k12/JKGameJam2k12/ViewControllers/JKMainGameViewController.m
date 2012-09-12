@@ -31,6 +31,9 @@
 @synthesize moneyLabel;
 @synthesize groundView;
 @synthesize plotViews;
+@synthesize factoryCostLabel;
+@synthesize cowCostLabel;
+@synthesize treeCostLabel;
 @synthesize gameManager;
 @synthesize pollutionView;
 @synthesize restartButton;
@@ -67,6 +70,14 @@
 	panGestureRecognizer.maximumNumberOfTouches = 1;
 	[factoryStartView addGestureRecognizer:panGestureRecognizer];
 	
+	JKGrowthType* growthType;
+	growthType = [JKFactory new];
+	self.factoryCostLabel.text = [NSString stringWithFormat:@"$%d", growthType.cost];
+	growthType = [JKCow new];
+	self.cowCostLabel.text = [NSString stringWithFormat:@"$%d", growthType.cost];
+	growthType = [JKTree new];
+	self.treeCostLabel.text = [NSString stringWithFormat:@"$%d", growthType.cost];
+	
 	self.viewsToClearOnNewGame = [NSMutableArray arrayWithCapacity:0];
 	
 	[self restartGame];
@@ -87,6 +98,9 @@
 	[self setGroundView:nil];
 	[self setRestartButton:nil];
 	[self setFinalScoreLabel:nil];
+	[self setFactoryCostLabel:nil];
+	[self setCowCostLabel:nil];
+	[self setTreeCostLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
