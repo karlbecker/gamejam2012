@@ -36,7 +36,7 @@
 	self = [super init];
 	if (self) {
 		self.elapsedRounds = 0;
-		self.cash = 500;
+		self.cash = 475;
 		self.pollutionPercent = 0;
 		self.plots = [NSMutableArray new];
 		for (int i = 0; i < MAXIMUM_NUMBER_OF_PLOTS; i++) {

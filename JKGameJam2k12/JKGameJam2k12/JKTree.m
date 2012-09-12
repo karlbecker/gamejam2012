@@ -11,11 +11,11 @@
 @implementation JKTree
 
 -(float)pollution {
-	return -0.07;
+	return -0.06;
 }
 
 -(unsigned int)cost {
-	return 150;
+	return 160;
 }
 
 -(float)profit {
