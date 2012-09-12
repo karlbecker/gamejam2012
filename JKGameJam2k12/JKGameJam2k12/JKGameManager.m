@@ -26,7 +26,7 @@
 -(id)init {
 	self = [super init];
 	if (self) {
-		self.cash = 0;
+		self.cash = 500;
 		self.pollutionLevel = 0;
 		self.plots = [NSMutableArray new];
 		for (int i = 0; i < MAXIMUM_NUMBER_OF_PLOTS; i++) {
