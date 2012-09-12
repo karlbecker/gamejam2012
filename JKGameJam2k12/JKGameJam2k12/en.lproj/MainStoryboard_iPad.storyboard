@@ -35,7 +35,7 @@
                                 <rect key="frame" x="8" y="222" width="75" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" image="tree_start.png" id="rC5-wk-ZyJ">
+                            <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" image="tree1.png" id="rC5-wk-ZyJ">
                                 <rect key="frame" x="8" y="377" width="75" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -154,7 +154,7 @@
         <image name="factory1.png" width="150" height="150"/>
         <image name="factory_start.png" width="150" height="150"/>
         <image name="start_platform.png" width="180" height="180"/>
-        <image name="tree_start.png" width="150" height="150"/>
+        <image name="tree1.png" width="150" height="150"/>
     </resources>
     <classes>
         <class className="JKMainGameViewController" superclassName="UIViewController">

@@ -133,7 +133,8 @@
 -(void)moveView:(UIView*)view toTopOfPlot:(int)index {
 	UIView* plotView = [self.plotViews objectAtIndex:index];
 	
-	[UIView animateWithDuration:ANIMATION_DURATION animations:^{
+	[UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
+	[UIView animateWithDuration:ANIMATION_DURATION delay:0.0 options:UIViewAnimationOptionCurveEaseIn animations:^{
 		CGRect frame = plotView.frame;
 		float heightOfGrowthImage = view.frame.size.height;
 		frame.origin.y -= [self.gameManager heightAtPlotIndex:index] * heightOfGrowthImage;
