@@ -1,25 +1,25 @@
 //
-//  JKCow.m
+//  JKTree.m
 //  JKGameJam2k12
 //
 //  Created by James Bell on 2012-09-11.
 //  Copyright (c) 2012 LMNOP. All rights reserved.
 //
 
-#import "JKCow.h"
+#import "JKTree.h"
 
-@implementation JKCow
+@implementation JKTree
 
 -(int)pollution {
-	return 1;
+	return -2;
 }
 
 -(unsigned int)cost {
-	return 100;
+	return 150;
 }
 
 -(int)profit {
-	return 15;
+	return 0;
 }
 
 @end
