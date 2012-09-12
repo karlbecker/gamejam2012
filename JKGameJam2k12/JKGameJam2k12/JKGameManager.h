@@ -15,6 +15,7 @@
 
 @property (readonly) float pollutionLevel;	// ranges from 0-1
 @property (readonly) unsigned int cash;
+@property (readonly) BOOL isGameOver;
 
 // Once per second, update the pollution level and cash. Then fire a notification NOTIFY_GAME_STATE_UPDATE.
 -(void)updateState;

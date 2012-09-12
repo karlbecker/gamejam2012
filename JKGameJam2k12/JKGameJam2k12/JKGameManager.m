@@ -39,6 +39,9 @@
 }
 
 -(void)updateState {
+	if (self.isGameOver)
+		return;
+	
 	for (JKPlot* plot in self.plots) {
 		if (plot.growthType && plot.height > 0) {
 			self.cash += plot.height * plot.growthType.profit;
@@ -51,7 +54,14 @@
 	// TODO fire notification to update ViewController
 }
 
+-(BOOL)isGameOver {
+	return (self.pollutionLevel >= 1);
+}
+
 -(BOOL)addGrowthType:(JKGrowthType*)growthType toPlotIndex:(int)index {
+	if (self.isGameOver)
+		return NO;
+	
 	if (self.cash < growthType.cost)
 		return NO;
 	
@@ -72,6 +82,9 @@
 }
 
 -(BOOL)remove:(int)numberToRemove fromPlotIndex:(int)index {
+	if (self.isGameOver)
+		return NO;
+	
 	if (index >= MAXIMUM_NUMBER_OF_PLOTS)
 		return NO;
 	
