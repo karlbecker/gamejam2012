@@ -11,7 +11,7 @@
 @implementation JKFactory
 
 -(float)pollution {
-	return 0.13;
+	return 0.15;
 }
 
 -(unsigned int)cost {

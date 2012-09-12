@@ -11,7 +11,7 @@
 @implementation JKTree
 
 -(float)pollution {
-	return -0.055;
+	return -0.058;
 }
 
 -(unsigned int)cost {
