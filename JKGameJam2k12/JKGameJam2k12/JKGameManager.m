@@ -18,6 +18,10 @@
 
 @implementation JKGameManager
 
+@synthesize pollutionLevel = _pollutionLevel;
+@synthesize cash = _cash;
+@synthesize plots = _plots;
+
 -(void)updateState {
 	
 }
