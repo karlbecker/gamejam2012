@@ -62,6 +62,12 @@
 		}
 	}
 	
+	// Penalty for running out of money
+	if (self.cash < 0) {
+		self.pollutionPercent += -self.cash/10;
+		self.cash = 0;
+	}
+	
 	self.pollutionPercent += [self neighboringPollutionForRound:self.elapsedRounds];
 	if (self.pollutionPercent > 1.0)
 		self.pollutionPercent = 1.0;
