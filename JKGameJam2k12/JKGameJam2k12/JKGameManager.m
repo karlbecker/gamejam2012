@@ -91,7 +91,7 @@
 	
 	if (plot.height == 0)
 		plot.growthType = growthType;
-	else if (![growthType isMemberOfClass:[plot class]])
+	else if (![growthType isMemberOfClass:[plot.growthType class]])
 		return NO;
 	
 	self.cash -= growthType.cost;

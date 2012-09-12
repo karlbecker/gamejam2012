@@ -106,6 +106,10 @@
                         <outletCollection property="plotViews" destination="OPs-c7-5H1" id="9MN-0c-LFj"/>
                         <outletCollection property="plotViews" destination="8oR-J9-sHf" id="PD8-g7-nuN"/>
                         <outletCollection property="plotViews" destination="dcB-Qp-qvB" id="Tb5-eL-sPX"/>
+                        <outletCollection property="plotViews" destination="YIU-LU-id9" id="mhe-C7-zpd"/>
+                        <outletCollection property="plotViews" destination="J43-wl-5tm" id="F96-Ty-Wo1"/>
+                        <outletCollection property="plotViews" destination="BZF-Ir-qly" id="2cx-BJ-YGQ"/>
+                        <outletCollection property="plotViews" destination="WaX-aL-edm" id="FIG-hK-HTe"/>
                     </connections>
                 </viewController>
             </objects>

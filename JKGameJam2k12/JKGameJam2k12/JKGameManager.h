@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "JKGrowthType.h"
 
-#define MAXIMUM_NUMBER_OF_PLOTS 6
+#define MAXIMUM_NUMBER_OF_PLOTS 8
 #define NOTIFY_GAME_STATE_UPDATE	(@"NOTIFY_GAME_STATE_UPDATE")
 
 @interface JKGameManager : NSObject

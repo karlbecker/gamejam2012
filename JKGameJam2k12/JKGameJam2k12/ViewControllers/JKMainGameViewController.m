@@ -8,11 +8,16 @@
 
 #import "JKMainGameViewController.h"
 #import "JKGameManager.h"
+#import "JKCow.h"
+#import "JKTree.h"
+#import "JKFactory.h"
 
-#define ANIMATION_DURATION 0.1
+#define ANIMATION_DURATION 0.3
 
 @interface JKMainGameViewController ()
-
+{
+	CGPoint startDragPoint;
+}
 -(int)indexOfPlotViewAtPoint:(CGPoint)point;
 -(void)moveView:(UIView*)view toTopOfPlot:(int)index;
 -(BOOL)dropView:(UIView*)view withGrowthType:(JKGrowthType*)growthType atPoint:(CGPoint)point;
@@ -87,9 +92,7 @@
 -(int)indexOfPlotViewAtPoint:(CGPoint)point {
 	for (int i = 0; i < self.plotViews.count; i++) {
 		UIView* view = [self.plotViews objectAtIndex:i];
-		if (point.x < view.frame.origin.x)
-			return -1;
-		else if (point.x < view.frame.origin.x + view.frame.size.width)
+		if (point.x >= view.frame.origin.x && point.x < view.frame.origin.x + view.frame.size.width)
 			return i;
 		else
 			continue;
@@ -104,6 +107,7 @@
 		CGRect frame = plotView.frame;
 		float heightOfGrowthImage = view.frame.size.height;
 		frame.origin.y -= [self.gameManager heightAtPlotIndex:index] * heightOfGrowthImage;
+		frame.size.height = view.frame.size.height ;
 		view.frame = frame;
 	} completion:nil];
 }
@@ -120,14 +124,27 @@
 	return NO;
 }
 
+
+- (JKGrowthType *)growthTypeOf:(UIView *)view
+{
+	if( view == treeStartView )
+		return [JKTree new];
+	else if( view == cowStartView )
+		return [JKCow new];
+	else
+		return [JKFactory new];
+}
+
+
 #pragma mark - Gesture Recognizer responses
 
 - (void)startViewDragged:(UIPanGestureRecognizer *)recognizer
 {
-	UIView *dragView = recognizer.view;
+	UIImageView *dragView = (UIImageView *)recognizer.view;
 	
 	if( recognizer.state == UIGestureRecognizerStateBegan )
 	{
+		startDragPoint = dragView.center;
 		[recognizer setTranslation:CGPointMake(0.0, 0.0) inView:dragView.superview ];
 	}
 	else if( recognizer.state == UIGestureRecognizerStateChanged )
@@ -138,7 +155,28 @@
 	}
 	else if( (recognizer.state == UIGestureRecognizerStateEnded || recognizer.state == UIGestureRecognizerStateCancelled ) )
 	{
-		
+		if( [self indexOfPlotViewAtPoint:dragView.center] >= 0 )
+		{
+			UIImageView *newSprite = [[UIImageView alloc] initWithImage:dragView.image];
+			newSprite.frame = dragView.frame;
+			[self.view addSubview:newSprite];
+			
+			if( [self dropView:newSprite withGrowthType:[self growthTypeOf:dragView] atPoint:dragView.center] )
+			{
+				dragView.center = CGPointMake(startDragPoint.x - dragView.frame.size.width, startDragPoint.y);
+				[UIImageView animateWithDuration:ANIMATION_DURATION animations:^(){
+					dragView.center = startDragPoint;
+				}];
+				return;
+			}
+			else
+			{
+				[newSprite removeFromSuperview];
+			}
+		}
+		[UIImageView animateWithDuration:ANIMATION_DURATION animations:^(){
+			dragView.center = startDragPoint;
+		}];
 	}
 }
 

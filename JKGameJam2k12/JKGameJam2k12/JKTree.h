@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "JKGrowthType.h"
 
-@interface JKTree : NSObject
+@interface JKTree : JKGrowthType
 
 @end

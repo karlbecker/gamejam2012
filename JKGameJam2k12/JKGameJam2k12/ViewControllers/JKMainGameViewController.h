@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "JKGameManager.h"
 
+
+
 @interface JKMainGameViewController : UIViewController <UIGestureRecognizerDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *treeStartView;
 @property (weak, nonatomic) IBOutlet UIImageView *cowStartView;
