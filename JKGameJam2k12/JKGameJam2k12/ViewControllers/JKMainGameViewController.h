@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JKGameManager.h"
 
 @interface JKMainGameViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIImageView *treeStartView;
@@ -14,7 +15,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *factoryStartView;
 @property (strong, nonatomic) IBOutletCollection(UIView) NSArray *plotViews;
 
-
-//methods to 
+@property (retain, nonatomic) JKGameManager *gameManager;
 
 @end

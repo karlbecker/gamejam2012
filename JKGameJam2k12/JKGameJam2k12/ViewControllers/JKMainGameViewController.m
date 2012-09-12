@@ -18,6 +18,7 @@
 @synthesize cowStartView;
 @synthesize factoryStartView;
 @synthesize plotViews;
+@synthesize gameManager;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -33,6 +34,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notifyGameStateUpdate:) name:NOTIFY_GAME_STATE_UPDATE object:nil];
+	self.gameManager = [[JKGameManager alloc] init];
 }
 
 - (void)viewDidUnload
@@ -42,6 +44,9 @@
     [self setCowStartView:nil];
     [self setFactoryStartView:nil];
     [self setPlotViews:nil];
+	
+	self.gameManager = nil;
+	
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
