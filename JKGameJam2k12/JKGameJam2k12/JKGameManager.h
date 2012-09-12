@@ -16,6 +16,7 @@
 @property (readonly) float pollutionPercent;	// ranges from 0-1
 @property (readonly) unsigned int cash;
 @property (readonly) BOOL isGameOver;
+@property (readonly) int elapsedRounds;			// This is the user's score
 
 // Begins the game timer and starts updating the pollution level and cash.
 -(void)start;

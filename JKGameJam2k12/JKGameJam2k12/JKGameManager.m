@@ -18,6 +18,7 @@
 @property (readwrite) unsigned int cash;
 @property (retain) NSMutableArray* plots;	// with JKPlot objects
 @property (retain) NSTimer* timer;
+@property int elapsedRounds;
 
 // Once per second, update the pollution level and cash. Then fire a notification NOTIFY_GAME_STATE_UPDATE.
 -(void)updateState:(NSTimer*)timer;
@@ -30,10 +31,12 @@
 @synthesize cash = _cash;
 @synthesize plots = _plots;
 @synthesize timer = _timer;
+@synthesize elapsedRounds = _elapsedRounds;
 
 -(id)init {
 	self = [super init];
 	if (self) {
+		self.elapsedRounds = 0;
 		self.cash = 500;
 		self.pollutionPercent = 0;
 		self.plots = [NSMutableArray new];
@@ -51,6 +54,8 @@
 }
 
 -(void)updateState:(NSTimer*)timer {
+	self.elapsedRounds++;
+	
 	for (JKPlot* plot in self.plots) {
 		if (plot.growthType && plot.height > 0) {
 			self.cash += plot.height * plot.growthType.profit;
