@@ -13,6 +13,10 @@
 @end
 
 @implementation JKMainGameViewController
+@synthesize treeStartView;
+@synthesize cowStartView;
+@synthesize factoryStartView;
+@synthesize plotViews;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,6 +35,10 @@
 
 - (void)viewDidUnload
 {
+    [self setTreeStartView:nil];
+    [self setCowStartView:nil];
+    [self setFactoryStartView:nil];
+    [self setPlotViews:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }

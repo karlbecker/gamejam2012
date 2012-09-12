@@ -13,7 +13,6 @@
 		1A7C5D81160049320009795A /* JKCow.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7C5D80160049320009795A /* JKCow.m */; };
 		1A7C5D9416004DD60009795A /* JKFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7C5D9316004DD60009795A /* JKFactory.m */; };
 		1A7C5D9816004E170009795A /* JKTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7C5D9716004E160009795A /* JKTree.m */; };
-		408D81D0160043D300CB3BF3 /* JKMainGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 408D81CF160043D300CB3BF3 /* JKMainGameViewController.m */; };
 		40CC7630160042BD00CDDD7A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40CC762F160042BD00CDDD7A /* UIKit.framework */; };
 		40CC7632160042BD00CDDD7A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40CC7631160042BD00CDDD7A /* Foundation.framework */; };
 		40CC7634160042BD00CDDD7A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40CC7633160042BD00CDDD7A /* CoreGraphics.framework */; };
@@ -53,8 +52,6 @@
 		1A7C5D9316004DD60009795A /* JKFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKFactory.m; sourceTree = "<group>"; };
 		1A7C5D9616004E160009795A /* JKTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKTree.h; sourceTree = "<group>"; };
 		1A7C5D9716004E160009795A /* JKTree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKTree.m; sourceTree = "<group>"; };
-		408D81CE160043D300CB3BF3 /* JKMainGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JKMainGameViewController.h; path = ViewControllers/JKMainGameViewController.h; sourceTree = "<group>"; };
-		408D81CF160043D300CB3BF3 /* JKMainGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JKMainGameViewController.m; path = ViewControllers/JKMainGameViewController.m; sourceTree = "<group>"; };
 		40CC762B160042BD00CDDD7A /* JKGameJam2k12.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JKGameJam2k12.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40CC762F160042BD00CDDD7A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		40CC7631160042BD00CDDD7A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -161,8 +158,6 @@
 				40CC7647160042BD00CDDD7A /* JKViewController.h */,
 				40CC7648160042BD00CDDD7A /* JKViewController.m */,
 				40CC7636160042BD00CDDD7A /* Supporting Files */,
-				408D81CE160043D300CB3BF3 /* JKMainGameViewController.h */,
-				408D81CF160043D300CB3BF3 /* JKMainGameViewController.m */,
 			);
 			path = JKGameJam2k12;
 			sourceTree = "<group>";
@@ -315,7 +310,6 @@
 				1A7C5D81160049320009795A /* JKCow.m in Sources */,
 				1A7C5D9416004DD60009795A /* JKFactory.m in Sources */,
 				1A7C5D9816004E170009795A /* JKTree.m in Sources */,
-				408D81D0160043D300CB3BF3 /* JKMainGameViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
