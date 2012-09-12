@@ -58,7 +58,7 @@
 	for (JKPlot* plot in self.plots) {
 		if (plot.growthType && plot.height > 0) {
 			self.cash += (plot.height * plot.growthType.profit) * SECONDS_BETWEEN_ROUNDS;
-			self.pollutionPercent += (plot.height * plot.growthType.pollution) / 100.0;
+			self.pollutionPercent += (plot.height * plot.growthType.pollution) * SECONDS_BETWEEN_ROUNDS;
 		}
 	}
 	
@@ -132,8 +132,8 @@
 }
 
 -(float)neighboringPollutionForRound:(int)round {
-	round *= SECONDS_BETWEEN_ROUNDS;
-	return 0.001 * round * sqrt(round);
+	float floatRound = round * SECONDS_BETWEEN_ROUNDS;
+	return 0.001 * floatRound * sqrt(floatRound);
 }
 
 @end
