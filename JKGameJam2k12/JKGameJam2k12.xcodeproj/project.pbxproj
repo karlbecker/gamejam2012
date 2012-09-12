@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A7C5D781600443C0009795A /* JKGameManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7C5D771600443C0009795A /* JKGameManager.m */; };
+		1A7C5D7B160044CD0009795A /* JKGrowthType.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7C5D7A160044CD0009795A /* JKGrowthType.m */; };
+		1A7C5D7E160045850009795A /* JKPlot.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7C5D7D160045850009795A /* JKPlot.m */; };
 		40CC7630160042BD00CDDD7A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40CC762F160042BD00CDDD7A /* UIKit.framework */; };
 		40CC7632160042BD00CDDD7A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40CC7631160042BD00CDDD7A /* Foundation.framework */; };
 		40CC7634160042BD00CDDD7A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40CC7633160042BD00CDDD7A /* CoreGraphics.framework */; };
@@ -34,6 +37,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A7C5D761600443C0009795A /* JKGameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKGameManager.h; sourceTree = "<group>"; };
+		1A7C5D771600443C0009795A /* JKGameManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKGameManager.m; sourceTree = "<group>"; };
+		1A7C5D79160044CD0009795A /* JKGrowthType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKGrowthType.h; sourceTree = "<group>"; };
+		1A7C5D7A160044CD0009795A /* JKGrowthType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKGrowthType.m; sourceTree = "<group>"; };
+		1A7C5D7C160045850009795A /* JKPlot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKPlot.h; sourceTree = "<group>"; };
+		1A7C5D7D160045850009795A /* JKPlot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKPlot.m; sourceTree = "<group>"; };
 		40CC762B160042BD00CDDD7A /* JKGameJam2k12.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JKGameJam2k12.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40CC762F160042BD00CDDD7A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		40CC7631160042BD00CDDD7A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -80,6 +89,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A7C5D741600441A0009795A /* GameManager */ = {
+			isa = PBXGroup;
+			children = (
+				1A7C5D761600443C0009795A /* JKGameManager.h */,
+				1A7C5D771600443C0009795A /* JKGameManager.m */,
+				1A7C5D79160044CD0009795A /* JKGrowthType.h */,
+				1A7C5D7A160044CD0009795A /* JKGrowthType.m */,
+				1A7C5D7C160045850009795A /* JKPlot.h */,
+				1A7C5D7D160045850009795A /* JKPlot.m */,
+			);
+			name = GameManager;
+			sourceTree = "<group>";
+		};
 		40CC7620160042BD00CDDD7A = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +135,7 @@
 		40CC7635160042BD00CDDD7A /* JKGameJam2k12 */ = {
 			isa = PBXGroup;
 			children = (
+				1A7C5D741600441A0009795A /* GameManager */,
 				40CC763E160042BD00CDDD7A /* JKAppDelegate.h */,
 				40CC763F160042BD00CDDD7A /* JKAppDelegate.m */,
 				40CC7641160042BD00CDDD7A /* MainStoryboard_iPhone.storyboard */,
@@ -266,6 +289,9 @@
 				40CC763C160042BD00CDDD7A /* main.m in Sources */,
 				40CC7640160042BD00CDDD7A /* JKAppDelegate.m in Sources */,
 				40CC7649160042BD00CDDD7A /* JKViewController.m in Sources */,
+				1A7C5D781600443C0009795A /* JKGameManager.m in Sources */,
+				1A7C5D7B160044CD0009795A /* JKGrowthType.m in Sources */,
+				1A7C5D7E160045850009795A /* JKPlot.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,6 +475,7 @@
 				40CC7663160042BD00CDDD7A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		40CC7664160042BD00CDDD7A /* Build configuration list for PBXNativeTarget "JKGameJam2k12Tests" */ = {
 			isa = XCConfigurationList;
@@ -457,6 +484,7 @@
 				40CC7666160042BD00CDDD7A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
