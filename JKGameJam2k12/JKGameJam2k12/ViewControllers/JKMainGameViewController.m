@@ -11,6 +11,8 @@
 
 @interface JKMainGameViewController ()
 
+-(int)indexOfPlotViewAtPoint:(CGPoint)point;
+
 @end
 
 @implementation JKMainGameViewController
@@ -54,6 +56,19 @@
 
 -(void)notifyGameStateUpdate:(NSNotification*)note {
 	// TODO NOTIFY_GAME_STATE_UPDATE
+}
+
+-(int)indexOfPlotViewAtPoint:(CGPoint)point {
+	for (int i = 0; i < self.plotViews.count; i++) {
+		UIView* view = [self.plotViews objectAtIndex:i];
+		if (point.x < view.frame.origin.x)
+			return -1;
+		else if (point.x < view.frame.origin.x + view.frame.size.width)
+			return i;
+		else
+			continue;
+	}
+	return -1;
 }
 
 @end
