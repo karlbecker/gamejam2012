@@ -98,7 +98,7 @@
 
 
 -(void)notifyGameStateUpdate:(NSNotification*)note {
-	self.moneyLabel.text = [NSString stringWithFormat:@"$%.2f", self.gameManager.cash];
+	self.moneyLabel.text = [NSString stringWithFormat:@"$%d", (int)self.gameManager.cash];
 	[UIView animateWithDuration:SECONDS_BETWEEN_ROUNDS animations:^(){
 		self.pollutionView.frame = CGRectMake(self.pollutionView.frame.origin.x, fmaxf(self.pollutionView.frame.origin.y, 0.0) , self.pollutionView.frame.size.width, (self.groundView.frame.origin.y - fmaxf(self.pollutionView.frame.origin.y, 0.0)) * self.gameManager.pollutionPercent);
 	}];
