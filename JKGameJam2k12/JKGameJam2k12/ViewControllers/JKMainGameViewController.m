@@ -86,6 +86,8 @@
 	
 	self.viewsToClearOnNewGame = [NSMutableArray arrayWithCapacity:0];
 	
+	[self.view bringSubviewToFront:pollutionView];
+	
 	[self restartGame];
 }
 
@@ -213,7 +215,6 @@
 			[self.viewsToClearOnNewGame addObject:newSprite];
 			[self.view addSubview:newSprite];
 			
-			[self.view bringSubviewToFront:pollutionView];
 			if( [self dropView:newSprite withGrowthType:[self growthTypeOf:dragView] atPoint:dragView.center] )
 			{
 				dragView.center = CGPointMake(startDragPoint.x - dragView.frame.size.width, startDragPoint.y);
