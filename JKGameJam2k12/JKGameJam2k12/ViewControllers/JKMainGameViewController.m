@@ -100,23 +100,9 @@
 -(void)notifyGameStateUpdate:(NSNotification*)note {
 	self.moneyLabel.text = [NSString stringWithFormat:@"$%i", self.gameManager.cash];
 	[UIView animateWithDuration:SECONDS_BETWEEN_ROUNDS animations:^(){
-		self.pollutionView.frame = CGRectMake(self.pollutionView.frame.origin.x, fmaxf(self.pollutionView.frame.origin.y, 0.0) , self.pollutionView.frame.size.width,
-											  (self.groundView.frame.origin.y - fmaxf(self.pollutionView.frame.origin.y, 0.0)) * self.gameManager.pollutionPercent);
+		self.pollutionView.frame = CGRectMake(self.pollutionView.frame.origin.x, fmaxf(self.pollutionView.frame.origin.y, 0.0) , self.pollutionView.frame.size.width, (self.groundView.frame.origin.y - fmaxf(self.pollutionView.frame.origin.y, 0.0)) * self.gameManager.pollutionPercent);
 	}];
-	
-	if( self.gameManager.isGameOver )
-	{
-		[UIView animateWithDuration:SECONDS_BETWEEN_ROUNDS animations:^(){
-			self.pollutionView.frame = CGRectMake(self.pollutionView.frame.origin.x, fmaxf(self.pollutionView.frame.origin.y, 0.0) , self.pollutionView.frame.size.width,
-												  (self.groundView.frame.origin.y - fmaxf(self.pollutionView.frame.origin.y, 0.0)) * self.gameManager.pollutionPercent);
-		}];
-		
-		restartButton.hidden = NO;
-		finalScoreLabel.text = [NSString stringWithFormat:@"You lasted %i years!", self.gameManager.elapsedRounds];
-		finalScoreLabel.hidden = NO;
-		[self.view bringSubviewToFront:restartButton];
-		[self.view bringSubviewToFront:finalScoreLabel];
-	}
+	[NSTimer scheduledTimerWithTimeInterval:SECONDS_BETWEEN_ROUNDS-0.1 target:self selector:@selector(gameEnded:) userInfo:nil repeats:NO];
 }
 
 -(int)indexOfPlotViewAtPoint:(CGPoint)point {
@@ -236,4 +222,17 @@
 {
 	[self restartGame];
 }
+
+-(void)gameEnded:(NSTimer*)timer
+{
+	if( self.gameManager.isGameOver )
+	{
+		restartButton.hidden = NO;
+		finalScoreLabel.text = [NSString stringWithFormat:@"You lasted %i years!", self.gameManager.elapsedRounds];
+		finalScoreLabel.hidden = NO;
+		[self.view bringSubviewToFront:restartButton];
+		[self.view bringSubviewToFront:finalScoreLabel];
+	}
+}
+	 
 @end
