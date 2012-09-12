@@ -10,7 +10,7 @@
 
 @implementation JKGrowthType
 
--(int)pollution {
+-(float)pollution {
 	return 0;
 }
 
@@ -18,7 +18,7 @@
 	return 0;
 }
 
--(int)profit {
+-(float)profit {
 	return 0;
 }
 

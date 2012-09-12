@@ -10,7 +10,7 @@
 
 @implementation JKTree
 
--(int)pollution {
+-(float)pollution {
 	return -1;
 }
 
@@ -18,7 +18,7 @@
 	return 150;
 }
 
--(int)profit {
+-(float)profit {
 	return 0;
 }
 

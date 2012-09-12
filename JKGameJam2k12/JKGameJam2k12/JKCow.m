@@ -10,7 +10,7 @@
 
 @implementation JKCow
 
--(int)pollution {
+-(float)pollution {
 	return 1;
 }
 
@@ -18,7 +18,7 @@
 	return 100;
 }
 
--(int)profit {
+-(float)profit {
 	return 15;
 }
 

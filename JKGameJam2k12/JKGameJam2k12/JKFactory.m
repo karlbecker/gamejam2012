@@ -10,7 +10,7 @@
 
 @implementation JKFactory
 
--(int)pollution {
+-(float)pollution {
 	return 3;
 }
 
@@ -18,7 +18,7 @@
 	return 300;
 }
 
--(int)profit {
+-(float)profit {
 	return 30;
 }
 
