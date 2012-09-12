@@ -11,15 +11,15 @@
 @implementation JKCow
 
 -(float)pollution {
-	return 0.12;
+	return 0.055;
 }
 
 -(unsigned int)cost {
-	return 75;
+	return 25;
 }
 
 -(float)profit {
-	return 15;
+	return 6;
 }
 
 @end

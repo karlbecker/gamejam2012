@@ -36,8 +36,8 @@
 	self = [super init];
 	if (self) {
 		self.elapsedRounds = 0;
-		self.cash = 475;
-		self.pollutionPercent = 0;
+		self.cash = 125;
+		self.pollutionPercent = 0.2;
 		self.plots = [NSMutableArray new];
 		for (int i = 0; i < MAXIMUM_NUMBER_OF_PLOTS; i++) {
 			[self.plots addObject:[JKPlot new]];
@@ -133,7 +133,7 @@
 
 -(float)neighboringPollutionForRound:(int)round {
 	float floatRound = round * SECONDS_BETWEEN_ROUNDS;
-	return 0.00008 * floatRound;
+	return 0.000009 * powf(floatRound, 1.6);
 }
 
 @end
