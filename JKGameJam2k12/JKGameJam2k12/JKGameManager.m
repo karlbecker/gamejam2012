@@ -15,7 +15,7 @@
 
 @property (readwrite) float pollutionLevel;	// ranges from 0-1
 @property (readwrite) unsigned int cash;
-@property NSMutableArray* plots;	// with JKPlot objects
+@property (retain) NSMutableArray* plots;	// with JKPlot objects
 
 @end
 

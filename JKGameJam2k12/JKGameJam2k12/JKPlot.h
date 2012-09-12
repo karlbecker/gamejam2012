@@ -12,6 +12,6 @@
 @interface JKPlot : NSObject
 
 @property int height;
-@property JKGrowthType* growthType;
+@property (retain) JKGrowthType* growthType;
 
 @end
