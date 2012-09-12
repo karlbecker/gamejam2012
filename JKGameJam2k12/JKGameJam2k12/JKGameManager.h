@@ -17,8 +17,8 @@
 @property (readonly) unsigned int cash;
 @property (readonly) BOOL isGameOver;
 
-// Once per second, update the pollution level and cash. Then fire a notification NOTIFY_GAME_STATE_UPDATE.
--(void)updateState;
+// Begins the game timer and starts updating the pollution level and cash.
+-(void)start;
 
 // Returns true if the add was successful (i.e. the user had enough cash). Otherwise returns false.
 -(BOOL)addGrowthType:(JKGrowthType*)growthType toPlotIndex:(int)index;

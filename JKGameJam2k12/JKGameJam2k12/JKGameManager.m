@@ -10,12 +10,17 @@
 #import "JKPlot.h"
 
 #define INCREASE_IN_POLLUTION_PER_ROUND 0.01
+#define SECONDS_BETWEEN_ROUNDS 1
 
 @interface JKGameManager ()
 
 @property (readwrite) float pollutionPercent;	// ranges from 0-1
 @property (readwrite) unsigned int cash;
 @property (retain) NSMutableArray* plots;	// with JKPlot objects
+@property (retain) NSTimer* timer;
+
+// Once per second, update the pollution level and cash. Then fire a notification NOTIFY_GAME_STATE_UPDATE.
+-(void)updateState:(NSTimer*)timer;
 
 @end
 
@@ -24,6 +29,7 @@
 @synthesize pollutionPercent = _pollutionLevel;
 @synthesize cash = _cash;
 @synthesize plots = _plots;
+@synthesize timer = _timer;
 
 -(id)init {
 	self = [super init];
@@ -38,10 +44,13 @@
 	return self;
 }
 
--(void)updateState {
-	if (self.isGameOver)
+-(void)start {
+	if (self.timer || self.isGameOver)
 		return;
-	
+	self.timer = [NSTimer scheduledTimerWithTimeInterval:SECONDS_BETWEEN_ROUNDS target:self selector:@selector(updateState:) userInfo:nil repeats:YES];
+}
+
+-(void)updateState:(NSTimer*)timer {
 	for (JKPlot* plot in self.plots) {
 		if (plot.growthType && plot.height > 0) {
 			self.cash += plot.height * plot.growthType.profit;
@@ -52,6 +61,11 @@
 	self.pollutionPercent += INCREASE_IN_POLLUTION_PER_ROUND;
 	
 	// TODO fire notification to update ViewController
+	
+	if (self.isGameOver) {
+		[self.timer invalidate];
+		self.timer = nil;
+	}
 }
 
 -(BOOL)isGameOver {
