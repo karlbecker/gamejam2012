@@ -17,6 +17,7 @@
 @synthesize cowStartView;
 @synthesize factoryStartView;
 @synthesize plotViews;
+@synthesize gameManager;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,6 +32,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+	self.gameManager = [[JKGameManager alloc] init];
 }
 
 - (void)viewDidUnload
@@ -39,6 +41,9 @@
     [self setCowStartView:nil];
     [self setFactoryStartView:nil];
     [self setPlotViews:nil];
+	
+	self.gameManager = nil;
+	
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
