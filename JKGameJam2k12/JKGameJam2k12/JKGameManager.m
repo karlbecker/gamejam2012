@@ -9,6 +9,8 @@
 #import "JKGameManager.h"
 #import "JKPlot.h"
 
+#define INCREASE_IN_POLLUTION_PER_ROUND 0.01
+
 @interface JKGameManager ()
 
 @property (readwrite) float pollutionLevel;	// ranges from 0-1
@@ -37,7 +39,16 @@
 }
 
 -(void)updateState {
+	for (JKPlot* plot in self.plots) {
+		if (plot.growthType && plot.height > 0) {
+			self.cash += plot.height * plot.growthType.profit;
+			self.pollutionLevel += plot.height * plot.growthType.pollution;
+		}
+	}
 	
+	self.pollutionLevel += INCREASE_IN_POLLUTION_PER_ROUND;
+	
+	// TODO fire notification to update ViewController
 }
 
 -(BOOL)addGrowthType:(JKGrowthType*)growthType toPlotIndex:(int)index {
