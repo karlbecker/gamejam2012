@@ -10,13 +10,13 @@
 #import "JKGrowthType.h"
 
 #define MAXIMUM_NUMBER_OF_PLOTS 8
-#define SECONDS_BETWEEN_ROUNDS 1
+#define SECONDS_BETWEEN_ROUNDS 0.1
 #define NOTIFY_GAME_STATE_UPDATE	(@"NOTIFY_GAME_STATE_UPDATE")
 
 @interface JKGameManager : NSObject
 
 @property (readonly) float pollutionPercent;	// ranges from 0-1
-@property (readonly) unsigned int cash;
+@property (readonly) float cash;
 @property (readonly) BOOL isGameOver;
 @property (readonly) int elapsedRounds;			// This is the user's score
 

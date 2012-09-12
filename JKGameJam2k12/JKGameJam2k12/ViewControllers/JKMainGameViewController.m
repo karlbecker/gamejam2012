@@ -98,7 +98,7 @@
 
 
 -(void)notifyGameStateUpdate:(NSNotification*)note {
-	self.moneyLabel.text = [NSString stringWithFormat:@"$%i", self.gameManager.cash];
+	self.moneyLabel.text = [NSString stringWithFormat:@"$%.2f", self.gameManager.cash];
 	[UIView animateWithDuration:SECONDS_BETWEEN_ROUNDS animations:^(){
 		self.pollutionView.frame = CGRectMake(self.pollutionView.frame.origin.x, fmaxf(self.pollutionView.frame.origin.y, 0.0) , self.pollutionView.frame.size.width, (self.groundView.frame.origin.y - fmaxf(self.pollutionView.frame.origin.y, 0.0)) * self.gameManager.pollutionPercent);
 	}];
@@ -228,7 +228,9 @@
 	if( self.gameManager.isGameOver )
 	{
 		restartButton.hidden = NO;
-		finalScoreLabel.text = [NSString stringWithFormat:@"You lasted %i years!", self.gameManager.elapsedRounds];
+		float years = self.gameManager.elapsedRounds;
+		years /= 10;
+		finalScoreLabel.text = [NSString stringWithFormat:@"You lasted %.1f years!", years];
 		finalScoreLabel.hidden = NO;
 		[self.view bringSubviewToFront:restartButton];
 		[self.view bringSubviewToFront:finalScoreLabel];

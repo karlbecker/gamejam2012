@@ -13,7 +13,7 @@
 @interface JKGameManager ()
 
 @property (readwrite) float pollutionPercent;	// ranges from 0-1
-@property (readwrite) unsigned int cash;
+@property (readwrite) float cash;
 @property (retain) NSMutableArray* plots;	// with JKPlot objects
 @property (retain) NSTimer* timer;
 @property int elapsedRounds;
@@ -57,7 +57,7 @@
 	
 	for (JKPlot* plot in self.plots) {
 		if (plot.growthType && plot.height > 0) {
-			self.cash += plot.height * plot.growthType.profit;
+			self.cash += (plot.height * plot.growthType.profit) * SECONDS_BETWEEN_ROUNDS;
 			self.pollutionPercent += (plot.height * plot.growthType.pollution) / 100.0;
 		}
 	}
@@ -132,6 +132,7 @@
 }
 
 -(float)neighboringPollutionForRound:(int)round {
+	round *= SECONDS_BETWEEN_ROUNDS;
 	return 0.001 * round * sqrt(round);
 }
 
