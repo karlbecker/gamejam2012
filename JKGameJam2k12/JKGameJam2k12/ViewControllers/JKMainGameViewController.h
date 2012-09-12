@@ -21,6 +21,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *factoryCostLabel;
 @property (weak, nonatomic) IBOutlet UILabel *cowCostLabel;
 @property (weak, nonatomic) IBOutlet UILabel *treeCostLabel;
+@property (strong, nonatomic) IBOutlet UILabel *factoryProfitLabel;
+@property (strong, nonatomic) IBOutlet UILabel *cowProfitLabel;
+@property (strong, nonatomic) IBOutlet UILabel *treeProfitLabel;
 
 @property (retain, nonatomic) JKGameManager *gameManager;
 @property (weak, nonatomic) IBOutlet UIView *pollutionView;

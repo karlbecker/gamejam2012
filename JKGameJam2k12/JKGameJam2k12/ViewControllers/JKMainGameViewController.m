@@ -34,6 +34,9 @@
 @synthesize factoryCostLabel;
 @synthesize cowCostLabel;
 @synthesize treeCostLabel;
+@synthesize factoryProfitLabel;
+@synthesize cowProfitLabel;
+@synthesize treeProfitLabel;
 @synthesize gameManager;
 @synthesize pollutionView;
 @synthesize restartButton;
@@ -73,10 +76,13 @@
 	JKGrowthType* growthType;
 	growthType = [JKFactory new];
 	self.factoryCostLabel.text = [NSString stringWithFormat:@"$%d", growthType.cost];
+	self.factoryProfitLabel.text = [NSString stringWithFormat:@"$%.0f", growthType.profit];
 	growthType = [JKCow new];
 	self.cowCostLabel.text = [NSString stringWithFormat:@"$%d", growthType.cost];
+	self.cowProfitLabel.text = [NSString stringWithFormat:@"$%.0f", growthType.profit];
 	growthType = [JKTree new];
 	self.treeCostLabel.text = [NSString stringWithFormat:@"$%d", growthType.cost];
+	self.treeProfitLabel.text = [NSString stringWithFormat:@"$%.0f", growthType.profit];
 	
 	self.viewsToClearOnNewGame = [NSMutableArray arrayWithCapacity:0];
 	
@@ -101,6 +107,9 @@
 	[self setFactoryCostLabel:nil];
 	[self setCowCostLabel:nil];
 	[self setTreeCostLabel:nil];
+    [self setFactoryProfitLabel:nil];
+    [self setCowProfitLabel:nil];
+    [self setTreeProfitLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
