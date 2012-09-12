@@ -9,8 +9,6 @@
 #import "JKGameManager.h"
 #import "JKPlot.h"
 
-#define INCREASE_IN_POLLUTION_PER_ROUND 0.01
-
 
 @interface JKGameManager ()
 
@@ -22,6 +20,7 @@
 
 // Once per second, update the pollution level and cash. Then fire a notification NOTIFY_GAME_STATE_UPDATE.
 -(void)updateState:(NSTimer*)timer;
+-(float)neighboringPollutionForRound:(int)round;
 
 @end
 
@@ -63,7 +62,9 @@
 		}
 	}
 	
-	self.pollutionPercent += INCREASE_IN_POLLUTION_PER_ROUND;
+	self.pollutionPercent += [self neighboringPollutionForRound:self.elapsedRounds];
+	if (self.pollutionPercent > 1.0)
+		self.pollutionPercent = 1.0;
 	
 	if (self.isGameOver) {
 		[self.timer invalidate];
@@ -128,6 +129,10 @@
 	JKPlot* plot = [self.plots objectAtIndex:index];
 	
 	return plot.height;
+}
+
+-(float)neighboringPollutionForRound:(int)round {
+	return 0.001 * round * sqrt(round);
 }
 
 @end
