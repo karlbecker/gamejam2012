@@ -13,7 +13,7 @@
 
 @property (readwrite) float pollutionLevel;	// ranges from 0-1
 @property (readwrite) unsigned int cash;
-@property NSArray* plots;	// with JKPlot objects
+@property NSMutableArray* plots;	// with JKPlot objects
 
 @end
 
@@ -23,16 +23,59 @@
 @synthesize cash = _cash;
 @synthesize plots = _plots;
 
+-(id)init {
+	self = [super init];
+	if (self) {
+		self.cash = 0;
+		self.pollutionLevel = 0;
+		self.plots = [NSMutableArray new];
+		for (int i = 0; i < MAXIMUM_NUMBER_OF_PLOTS; i++) {
+			[self.plots addObject:[JKPlot new]];
+		}
+	}
+	return self;
+}
+
 -(void)updateState {
 	
 }
 
 -(BOOL)addGrowthType:(JKGrowthType*)growthType toPlotIndex:(int)index {
-	return NO;
+	if (self.cash < growthType.cost)
+		return NO;
+	
+	if (index >= MAXIMUM_NUMBER_OF_PLOTS)
+		return NO;
+	
+	JKPlot* plot = [self.plots objectAtIndex:index];
+	
+	if (plot.height == 0)
+		plot.growthType = growthType;
+	else if (![growthType isMemberOfClass:[plot class]])
+		return NO;
+	
+	self.cash -= growthType.cost;
+	plot.height++;
+	
+	return YES;
 }
 
--(void)remove:(int)numberToRemove fromPlotIndex:(int)index {
+-(BOOL)remove:(int)numberToRemove fromPlotIndex:(int)index {
+	if (index >= MAXIMUM_NUMBER_OF_PLOTS)
+		return NO;
 	
+	JKPlot* plot = [self.plots objectAtIndex:index];
+	
+	if (numberToRemove > plot.height)
+		numberToRemove = plot.height;
+	
+	plot.height -= numberToRemove;
+	
+	if (plot.height == 0) {
+		plot.growthType = nil;
+	}
+	
+	return YES;
 }
 
 @end

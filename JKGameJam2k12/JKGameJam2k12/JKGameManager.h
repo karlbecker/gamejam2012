@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "JKGrowthType.h"
 
+#define MAXIMUM_NUMBER_OF_PLOTS 6
+
 @interface JKGameManager : NSObject
 
 @property (readonly) float pollutionLevel;	// ranges from 0-1
@@ -20,6 +22,6 @@
 // Returns true if the add was successful (i.e. the user had enough cash). Otherwise returns false.
 -(BOOL)addGrowthType:(JKGrowthType*)growthType toPlotIndex:(int)index;
 
--(void)remove:(int)numberToRemove fromPlotIndex:(int)index;
+-(BOOL)remove:(int)numberToRemove fromPlotIndex:(int)index;
 
 @end
