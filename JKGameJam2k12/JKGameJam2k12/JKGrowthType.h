@@ -10,8 +10,8 @@
 
 @interface JKGrowthType : NSObject
 
-@property int pollution;
-@property unsigned int cost;
-@property int profit;
+@property (readonly) int pollution;
+@property (readonly) unsigned int cost;
+@property (readonly) int profit;
 
 @end

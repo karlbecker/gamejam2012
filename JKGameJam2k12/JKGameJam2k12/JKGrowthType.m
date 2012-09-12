@@ -10,8 +10,16 @@
 
 @implementation JKGrowthType
 
-@synthesize pollution = _pollution;
-@synthesize cost = _cost;
-@synthesize profit = _profit;
+-(int)pollution {
+	return 0;
+}
+
+-(unsigned int)cost {
+	return 0;
+}
+
+-(int)profit {
+	return 0;
+}
 
 @end
