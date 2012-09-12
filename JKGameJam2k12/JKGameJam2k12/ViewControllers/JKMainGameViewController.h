@@ -21,5 +21,9 @@
 
 @property (retain, nonatomic) JKGameManager *gameManager;
 @property (weak, nonatomic) IBOutlet UIView *pollutionView;
+@property (weak, nonatomic) IBOutlet UIButton *restartButton;
+@property (weak, nonatomic) IBOutlet UILabel *finalScoreLabel;
+- (IBAction)restartButtonTapped:(id)sender;
+
 
 @end

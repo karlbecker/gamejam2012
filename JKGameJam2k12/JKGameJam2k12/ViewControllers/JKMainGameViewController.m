@@ -33,6 +33,8 @@
 @synthesize plotViews;
 @synthesize gameManager;
 @synthesize pollutionView;
+@synthesize restartButton;
+@synthesize finalScoreLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -48,7 +50,6 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notifyGameStateUpdate:) name:NOTIFY_GAME_STATE_UPDATE object:nil];
-	self.gameManager = [[JKGameManager alloc] init];
 	
 	UIPanGestureRecognizer *panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(startViewDragged:)];
 	panGestureRecognizer.delegate = self;
@@ -65,7 +66,8 @@
 	panGestureRecognizer.maximumNumberOfTouches = 1;
 	[factoryStartView addGestureRecognizer:panGestureRecognizer];
 	
-	[self.gameManager start];
+	
+	[self restartGame];
 }
 
 - (void)viewDidUnload
@@ -81,6 +83,8 @@
 	[self setPollutionView:nil];
 	[self setMoneyLabel:nil];
 	[self setGroundView:nil];
+	[self setRestartButton:nil];
+	[self setFinalScoreLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -98,6 +102,12 @@
 											  (self.groundView.frame.origin.y - self.groundView.frame.size.height - self.pollutionView.frame.origin.y) * self.gameManager.pollutionPercent);
 	}];
 	
+	if( self.gameManager.isGameOver )
+	{
+		restartButton.hidden = NO;
+		finalScoreLabel.text = [NSString stringWithFormat:@"You lasted %i years!", self.gameManager.elapsedRounds];
+		finalScoreLabel.hidden = NO;
+	}
 }
 
 -(int)indexOfPlotViewAtPoint:(CGPoint)point {
@@ -172,6 +182,7 @@
 			newSprite.frame = dragView.frame;
 			[self.view addSubview:newSprite];
 			
+			[self.view bringSubviewToFront:pollutionView];
 			if( [self dropView:newSprite withGrowthType:[self growthTypeOf:dragView] atPoint:dragView.center] )
 			{
 				dragView.center = CGPointMake(startDragPoint.x - dragView.frame.size.width, startDragPoint.y);
@@ -191,4 +202,16 @@
 	}
 }
 
+- (void)restartGame
+{
+	restartButton.hidden = YES;
+	finalScoreLabel.hidden = YES;
+	self.gameManager = [JKGameManager new];
+	[self.gameManager start];
+}
+
+- (IBAction)restartButtonTapped:(id)sender
+{
+	[self restartGame];
+}
 @end
