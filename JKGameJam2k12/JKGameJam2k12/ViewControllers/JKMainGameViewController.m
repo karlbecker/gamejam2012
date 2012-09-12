@@ -102,7 +102,7 @@
 	[UIView animateWithDuration:SECONDS_BETWEEN_ROUNDS animations:^(){
 		self.pollutionView.frame = CGRectMake(self.pollutionView.frame.origin.x, fmaxf(self.pollutionView.frame.origin.y, 0.0) , self.pollutionView.frame.size.width, (self.groundView.frame.origin.y - fmaxf(self.pollutionView.frame.origin.y, 0.0)) * self.gameManager.pollutionPercent);
 	}];
-	[NSTimer scheduledTimerWithTimeInterval:SECONDS_BETWEEN_ROUNDS-0.1 target:self selector:@selector(gameEnded:) userInfo:nil repeats:NO];
+	[NSTimer scheduledTimerWithTimeInterval:SECONDS_BETWEEN_ROUNDS*0.99 target:self selector:@selector(gameEnded:) userInfo:nil repeats:NO];
 }
 
 -(int)indexOfPlotViewAtPoint:(CGPoint)point {
