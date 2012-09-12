@@ -7,6 +7,7 @@
 //
 
 #import "JKMainGameViewController.h"
+#import "JKGameManager.h"
 
 @interface JKMainGameViewController ()
 
@@ -31,10 +32,12 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notifyGameStateUpdate:) name:NOTIFY_GAME_STATE_UPDATE object:nil];
 }
 
 - (void)viewDidUnload
 {
+	[[NSNotificationCenter defaultCenter] removeObserver:self];
     [self setTreeStartView:nil];
     [self setCowStartView:nil];
     [self setFactoryStartView:nil];
@@ -46,6 +49,10 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationLandscapeLeft || interfaceOrientation == UIInterfaceOrientationLandscapeRight);
+}
+
+-(void)notifyGameStateUpdate:(NSNotification*)note {
+	// TODO NOTIFY_GAME_STATE_UPDATE
 }
 
 @end

@@ -10,6 +10,7 @@
 #import "JKGrowthType.h"
 
 #define MAXIMUM_NUMBER_OF_PLOTS 6
+#define NOTIFY_GAME_STATE_UPDATE	(@"NOTIFY_GAME_STATE_UPDATE")
 
 @interface JKGameManager : NSObject
 
@@ -18,7 +19,7 @@
 @property (readonly) BOOL isGameOver;
 @property (readonly) int elapsedRounds;			// This is the user's score
 
-// Begins the game timer and starts updating the pollution level and cash.
+// Begins the game timer and starts updating the pollution level and cash. A notification NOTIFY_GAME_STATE_UPDATE will be sent when the pollution level and/or cash are updated.
 -(void)start;
 
 // Returns true if the add was successful (i.e. the user had enough cash). Otherwise returns false.

@@ -65,12 +65,12 @@
 	
 	self.pollutionPercent += INCREASE_IN_POLLUTION_PER_ROUND;
 	
-	// TODO fire notification to update ViewController
-	
 	if (self.isGameOver) {
 		[self.timer invalidate];
 		self.timer = nil;
 	}
+	
+	[[NSNotificationCenter defaultCenter] postNotificationName:NOTIFY_GAME_STATE_UPDATE object:nil];
 }
 
 -(BOOL)isGameOver {
