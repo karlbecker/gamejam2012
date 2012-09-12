@@ -84,7 +84,7 @@
 	if (self.cash < growthType.cost)
 		return NO;
 	
-	if (index >= MAXIMUM_NUMBER_OF_PLOTS)
+	if (index >= MAXIMUM_NUMBER_OF_PLOTS || index < 0)
 		return NO;
 	
 	JKPlot* plot = [self.plots objectAtIndex:index];
@@ -104,7 +104,7 @@
 	if (self.isGameOver)
 		return NO;
 	
-	if (index >= MAXIMUM_NUMBER_OF_PLOTS)
+	if (index >= MAXIMUM_NUMBER_OF_PLOTS || index < 0)
 		return NO;
 	
 	JKPlot* plot = [self.plots objectAtIndex:index];
