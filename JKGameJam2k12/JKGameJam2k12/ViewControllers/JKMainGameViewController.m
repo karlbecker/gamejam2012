@@ -25,6 +25,7 @@
 @synthesize factoryStartView;
 @synthesize plotViews;
 @synthesize gameManager;
+@synthesize pollutionView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -41,6 +42,21 @@
 	// Do any additional setup after loading the view.
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notifyGameStateUpdate:) name:NOTIFY_GAME_STATE_UPDATE object:nil];
 	self.gameManager = [[JKGameManager alloc] init];
+	
+	UIPanGestureRecognizer *panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(startViewDragged:)];
+	panGestureRecognizer.delegate = self;
+	panGestureRecognizer.maximumNumberOfTouches = 1;
+	[treeStartView addGestureRecognizer:panGestureRecognizer];
+	
+	panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(startViewDragged:)];
+	panGestureRecognizer.delegate = self;
+	panGestureRecognizer.maximumNumberOfTouches = 1;
+	[cowStartView addGestureRecognizer:panGestureRecognizer];
+	
+	panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(startViewDragged:)];
+	panGestureRecognizer.delegate = self;
+	panGestureRecognizer.maximumNumberOfTouches = 1;
+	[factoryStartView addGestureRecognizer:panGestureRecognizer];
 }
 
 - (void)viewDidUnload
@@ -53,6 +69,7 @@
 	
 	self.gameManager = nil;
 	
+	[self setPollutionView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -101,6 +118,28 @@
 	}
 	
 	return NO;
+}
+
+#pragma mark - Gesture Recognizer responses
+
+- (void)startViewDragged:(UIPanGestureRecognizer *)recognizer
+{
+	UIView *dragView = recognizer.view;
+	
+	if( recognizer.state == UIGestureRecognizerStateBegan )
+	{
+		[recognizer setTranslation:CGPointMake(0.0, 0.0) inView:dragView.superview ];
+	}
+	else if( recognizer.state == UIGestureRecognizerStateChanged )
+	{
+		CGPoint translation = [recognizer translationInView:dragView.superview];
+		dragView.center = CGPointMake(dragView.center.x + translation.x, dragView.center.y + translation.y);
+		[recognizer setTranslation:CGPointMake(0.0, 0.0) inView:dragView.superview];
+	}
+	else if( (recognizer.state == UIGestureRecognizerStateEnded || recognizer.state == UIGestureRecognizerStateCancelled ) )
+	{
+		
+	}
 }
 
 @end

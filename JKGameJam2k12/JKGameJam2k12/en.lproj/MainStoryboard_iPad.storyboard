@@ -31,15 +31,15 @@
                                 <rect key="frame" x="0.0" y="452" width="90" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="cow_start.png" id="8Tn-du-QAw">
+                            <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" image="cow_start.png" id="8Tn-du-QAw">
                                 <rect key="frame" x="8" y="222" width="75" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="tree_start.png" id="rC5-wk-ZyJ">
+                            <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" image="tree_start.png" id="rC5-wk-ZyJ">
                                 <rect key="frame" x="8" y="377" width="75" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView contentMode="scaleToFill" image="factory1.png" id="pWG-eZ-hEc">
+                            <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" image="factory1.png" id="pWG-eZ-hEc">
                                 <rect key="frame" x="8" y="38" width="78" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -87,6 +87,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
+                            <view alpha="0.59999999999999998" contentMode="scaleToFill" id="hWV-vX-bQc">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.50810976334102953" green="0.56470588235294117" blue="0.29248769699196747" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.26666666666666666" green="0.73333333333333328" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -94,7 +99,8 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <outlet property="cowStartView" destination="8Tn-du-QAw" id="fxs-wk-hyW"/>
-                        <outlet property="factoryStartView" destination="B6B-j6-Q7R" id="223-XM-beV"/>
+                        <outlet property="factoryStartView" destination="pWG-eZ-hEc" id="J7R-x1-0uQ"/>
+                        <outlet property="pollutionView" destination="hWV-vX-bQc" id="agU-bS-yQb"/>
                         <outlet property="treeStartView" destination="rC5-wk-ZyJ" id="YmM-aZ-yIQ"/>
                         <outletCollection property="plotViews" destination="jdu-aZ-VCr" id="Xph-6E-S2p"/>
                         <outletCollection property="plotViews" destination="OPs-c7-5H1" id="9MN-0c-LFj"/>
@@ -118,6 +124,7 @@
             <relationships>
                 <relationship kind="outlet" name="cowStartView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="factoryStartView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="pollutionView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="treeStartView" candidateClass="UIImageView"/>
                 <relationship kind="outletCollection" name="plotViews" candidateClass="UIView"/>
             </relationships>
