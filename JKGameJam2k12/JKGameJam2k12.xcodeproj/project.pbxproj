@@ -1,0 +1,464 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		40CC7630160042BD00CDDD7A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40CC762F160042BD00CDDD7A /* UIKit.framework */; };
+		40CC7632160042BD00CDDD7A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40CC7631160042BD00CDDD7A /* Foundation.framework */; };
+		40CC7634160042BD00CDDD7A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40CC7633160042BD00CDDD7A /* CoreGraphics.framework */; };
+		40CC763A160042BD00CDDD7A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 40CC7638160042BD00CDDD7A /* InfoPlist.strings */; };
+		40CC763C160042BD00CDDD7A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 40CC763B160042BD00CDDD7A /* main.m */; };
+		40CC7640160042BD00CDDD7A /* JKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 40CC763F160042BD00CDDD7A /* JKAppDelegate.m */; };
+		40CC7643160042BD00CDDD7A /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40CC7641160042BD00CDDD7A /* MainStoryboard_iPhone.storyboard */; };
+		40CC7646160042BD00CDDD7A /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40CC7644160042BD00CDDD7A /* MainStoryboard_iPad.storyboard */; };
+		40CC7649160042BD00CDDD7A /* JKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40CC7648160042BD00CDDD7A /* JKViewController.m */; };
+		40CC7651160042BD00CDDD7A /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40CC7650160042BD00CDDD7A /* SenTestingKit.framework */; };
+		40CC7652160042BD00CDDD7A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40CC762F160042BD00CDDD7A /* UIKit.framework */; };
+		40CC7653160042BD00CDDD7A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40CC7631160042BD00CDDD7A /* Foundation.framework */; };
+		40CC765B160042BD00CDDD7A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 40CC7659160042BD00CDDD7A /* InfoPlist.strings */; };
+		40CC765E160042BD00CDDD7A /* JKGameJam2k12Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 40CC765D160042BD00CDDD7A /* JKGameJam2k12Tests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		40CC7654160042BD00CDDD7A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 40CC7622160042BD00CDDD7A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 40CC762A160042BD00CDDD7A;
+			remoteInfo = JKGameJam2k12;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		40CC762B160042BD00CDDD7A /* JKGameJam2k12.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JKGameJam2k12.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		40CC762F160042BD00CDDD7A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		40CC7631160042BD00CDDD7A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		40CC7633160042BD00CDDD7A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		40CC7637160042BD00CDDD7A /* JKGameJam2k12-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JKGameJam2k12-Info.plist"; sourceTree = "<group>"; };
+		40CC7639160042BD00CDDD7A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		40CC763B160042BD00CDDD7A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		40CC763D160042BD00CDDD7A /* JKGameJam2k12-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JKGameJam2k12-Prefix.pch"; sourceTree = "<group>"; };
+		40CC763E160042BD00CDDD7A /* JKAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JKAppDelegate.h; sourceTree = "<group>"; };
+		40CC763F160042BD00CDDD7A /* JKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JKAppDelegate.m; sourceTree = "<group>"; };
+		40CC7642160042BD00CDDD7A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		40CC7645160042BD00CDDD7A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		40CC7647160042BD00CDDD7A /* JKViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JKViewController.h; sourceTree = "<group>"; };
+		40CC7648160042BD00CDDD7A /* JKViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JKViewController.m; sourceTree = "<group>"; };
+		40CC764F160042BD00CDDD7A /* JKGameJam2k12Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JKGameJam2k12Tests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		40CC7650160042BD00CDDD7A /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		40CC7658160042BD00CDDD7A /* JKGameJam2k12Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JKGameJam2k12Tests-Info.plist"; sourceTree = "<group>"; };
+		40CC765A160042BD00CDDD7A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		40CC765C160042BD00CDDD7A /* JKGameJam2k12Tests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JKGameJam2k12Tests.h; sourceTree = "<group>"; };
+		40CC765D160042BD00CDDD7A /* JKGameJam2k12Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JKGameJam2k12Tests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		40CC7628160042BD00CDDD7A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40CC7630160042BD00CDDD7A /* UIKit.framework in Frameworks */,
+				40CC7632160042BD00CDDD7A /* Foundation.framework in Frameworks */,
+				40CC7634160042BD00CDDD7A /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		40CC764B160042BD00CDDD7A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40CC7651160042BD00CDDD7A /* SenTestingKit.framework in Frameworks */,
+				40CC7652160042BD00CDDD7A /* UIKit.framework in Frameworks */,
+				40CC7653160042BD00CDDD7A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		40CC7620160042BD00CDDD7A = {
+			isa = PBXGroup;
+			children = (
+				40CC7635160042BD00CDDD7A /* JKGameJam2k12 */,
+				40CC7656160042BD00CDDD7A /* JKGameJam2k12Tests */,
+				40CC762E160042BD00CDDD7A /* Frameworks */,
+				40CC762C160042BD00CDDD7A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		40CC762C160042BD00CDDD7A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				40CC762B160042BD00CDDD7A /* JKGameJam2k12.app */,
+				40CC764F160042BD00CDDD7A /* JKGameJam2k12Tests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		40CC762E160042BD00CDDD7A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				40CC762F160042BD00CDDD7A /* UIKit.framework */,
+				40CC7631160042BD00CDDD7A /* Foundation.framework */,
+				40CC7633160042BD00CDDD7A /* CoreGraphics.framework */,
+				40CC7650160042BD00CDDD7A /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		40CC7635160042BD00CDDD7A /* JKGameJam2k12 */ = {
+			isa = PBXGroup;
+			children = (
+				40CC763E160042BD00CDDD7A /* JKAppDelegate.h */,
+				40CC763F160042BD00CDDD7A /* JKAppDelegate.m */,
+				40CC7641160042BD00CDDD7A /* MainStoryboard_iPhone.storyboard */,
+				40CC7644160042BD00CDDD7A /* MainStoryboard_iPad.storyboard */,
+				40CC7647160042BD00CDDD7A /* JKViewController.h */,
+				40CC7648160042BD00CDDD7A /* JKViewController.m */,
+				40CC7636160042BD00CDDD7A /* Supporting Files */,
+			);
+			path = JKGameJam2k12;
+			sourceTree = "<group>";
+		};
+		40CC7636160042BD00CDDD7A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				40CC7637160042BD00CDDD7A /* JKGameJam2k12-Info.plist */,
+				40CC7638160042BD00CDDD7A /* InfoPlist.strings */,
+				40CC763B160042BD00CDDD7A /* main.m */,
+				40CC763D160042BD00CDDD7A /* JKGameJam2k12-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		40CC7656160042BD00CDDD7A /* JKGameJam2k12Tests */ = {
+			isa = PBXGroup;
+			children = (
+				40CC765C160042BD00CDDD7A /* JKGameJam2k12Tests.h */,
+				40CC765D160042BD00CDDD7A /* JKGameJam2k12Tests.m */,
+				40CC7657160042BD00CDDD7A /* Supporting Files */,
+			);
+			path = JKGameJam2k12Tests;
+			sourceTree = "<group>";
+		};
+		40CC7657160042BD00CDDD7A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				40CC7658160042BD00CDDD7A /* JKGameJam2k12Tests-Info.plist */,
+				40CC7659160042BD00CDDD7A /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		40CC762A160042BD00CDDD7A /* JKGameJam2k12 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 40CC7661160042BD00CDDD7A /* Build configuration list for PBXNativeTarget "JKGameJam2k12" */;
+			buildPhases = (
+				40CC7627160042BD00CDDD7A /* Sources */,
+				40CC7628160042BD00CDDD7A /* Frameworks */,
+				40CC7629160042BD00CDDD7A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JKGameJam2k12;
+			productName = JKGameJam2k12;
+			productReference = 40CC762B160042BD00CDDD7A /* JKGameJam2k12.app */;
+			productType = "com.apple.product-type.application";
+		};
+		40CC764E160042BD00CDDD7A /* JKGameJam2k12Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 40CC7664160042BD00CDDD7A /* Build configuration list for PBXNativeTarget "JKGameJam2k12Tests" */;
+			buildPhases = (
+				40CC764A160042BD00CDDD7A /* Sources */,
+				40CC764B160042BD00CDDD7A /* Frameworks */,
+				40CC764C160042BD00CDDD7A /* Resources */,
+				40CC764D160042BD00CDDD7A /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				40CC7655160042BD00CDDD7A /* PBXTargetDependency */,
+			);
+			name = JKGameJam2k12Tests;
+			productName = JKGameJam2k12Tests;
+			productReference = 40CC764F160042BD00CDDD7A /* JKGameJam2k12Tests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		40CC7622160042BD00CDDD7A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = JK;
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = LMNOP;
+			};
+			buildConfigurationList = 40CC7625160042BD00CDDD7A /* Build configuration list for PBXProject "JKGameJam2k12" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 40CC7620160042BD00CDDD7A;
+			productRefGroup = 40CC762C160042BD00CDDD7A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				40CC762A160042BD00CDDD7A /* JKGameJam2k12 */,
+				40CC764E160042BD00CDDD7A /* JKGameJam2k12Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		40CC7629160042BD00CDDD7A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40CC763A160042BD00CDDD7A /* InfoPlist.strings in Resources */,
+				40CC7643160042BD00CDDD7A /* MainStoryboard_iPhone.storyboard in Resources */,
+				40CC7646160042BD00CDDD7A /* MainStoryboard_iPad.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		40CC764C160042BD00CDDD7A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40CC765B160042BD00CDDD7A /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		40CC764D160042BD00CDDD7A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		40CC7627160042BD00CDDD7A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40CC763C160042BD00CDDD7A /* main.m in Sources */,
+				40CC7640160042BD00CDDD7A /* JKAppDelegate.m in Sources */,
+				40CC7649160042BD00CDDD7A /* JKViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		40CC764A160042BD00CDDD7A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40CC765E160042BD00CDDD7A /* JKGameJam2k12Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		40CC7655160042BD00CDDD7A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 40CC762A160042BD00CDDD7A /* JKGameJam2k12 */;
+			targetProxy = 40CC7654160042BD00CDDD7A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		40CC7638160042BD00CDDD7A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				40CC7639160042BD00CDDD7A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		40CC7641160042BD00CDDD7A /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				40CC7642160042BD00CDDD7A /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		40CC7644160042BD00CDDD7A /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				40CC7645160042BD00CDDD7A /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		40CC7659160042BD00CDDD7A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				40CC765A160042BD00CDDD7A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		40CC765F160042BD00CDDD7A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		40CC7660160042BD00CDDD7A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		40CC7662160042BD00CDDD7A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JKGameJam2k12/JKGameJam2k12-Prefix.pch";
+				INFOPLIST_FILE = "JKGameJam2k12/JKGameJam2k12-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		40CC7663160042BD00CDDD7A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JKGameJam2k12/JKGameJam2k12-Prefix.pch";
+				INFOPLIST_FILE = "JKGameJam2k12/JKGameJam2k12-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		40CC7665160042BD00CDDD7A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/JKGameJam2k12.app/JKGameJam2k12";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JKGameJam2k12/JKGameJam2k12-Prefix.pch";
+				INFOPLIST_FILE = "JKGameJam2k12Tests/JKGameJam2k12Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		40CC7666160042BD00CDDD7A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/JKGameJam2k12.app/JKGameJam2k12";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JKGameJam2k12/JKGameJam2k12-Prefix.pch";
+				INFOPLIST_FILE = "JKGameJam2k12Tests/JKGameJam2k12Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		40CC7625160042BD00CDDD7A /* Build configuration list for PBXProject "JKGameJam2k12" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40CC765F160042BD00CDDD7A /* Debug */,
+				40CC7660160042BD00CDDD7A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		40CC7661160042BD00CDDD7A /* Build configuration list for PBXNativeTarget "JKGameJam2k12" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40CC7662160042BD00CDDD7A /* Debug */,
+				40CC7663160042BD00CDDD7A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		40CC7664160042BD00CDDD7A /* Build configuration list for PBXNativeTarget "JKGameJam2k12Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40CC7665160042BD00CDDD7A /* Debug */,
+				40CC7666160042BD00CDDD7A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 40CC7622160042BD00CDDD7A /* Project object */;
+}
