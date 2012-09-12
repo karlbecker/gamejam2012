@@ -11,11 +11,11 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>
                 <viewController id="2" customClass="JKMainGameViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5">
-                        <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="O4v-et-cRT">
-                                <rect key="frame" x="0.0" y="609" width="1024" height="139"/>
+                                <rect key="frame" x="0.0" y="609" width="1024" height="159"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.13333333333333333" green="0.33333333333333331" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
@@ -88,18 +88,28 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <view alpha="0.59999999999999998" contentMode="scaleToFill" id="hWV-vX-bQc">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="30"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="0.0"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.50810976334102953" green="0.56470588235294117" blue="0.29248769699196747" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="$" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" id="GNf-9y-upQ">
+                                <rect key="frame" x="20" y="697" width="197" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.26666666666666666" green="0.73333333333333328" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <outlet property="cowStartView" destination="8Tn-du-QAw" id="fxs-wk-hyW"/>
                         <outlet property="factoryStartView" destination="pWG-eZ-hEc" id="J7R-x1-0uQ"/>
+                        <outlet property="groundView" destination="O4v-et-cRT" id="qmX-MZ-Jgh"/>
+                        <outlet property="moneyLabel" destination="GNf-9y-upQ" id="1ce-up-qTG"/>
                         <outlet property="pollutionView" destination="hWV-vX-bQc" id="agU-bS-yQb"/>
                         <outlet property="treeStartView" destination="rC5-wk-ZyJ" id="YmM-aZ-yIQ"/>
                         <outletCollection property="plotViews" destination="jdu-aZ-VCr" id="Xph-6E-S2p"/>
@@ -128,6 +138,8 @@
             <relationships>
                 <relationship kind="outlet" name="cowStartView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="factoryStartView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="groundView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="moneyLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="pollutionView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="treeStartView" candidateClass="UIImageView"/>
                 <relationship kind="outletCollection" name="plotViews" candidateClass="UIView"/>

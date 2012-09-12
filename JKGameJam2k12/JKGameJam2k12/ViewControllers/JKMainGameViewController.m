@@ -28,6 +28,8 @@
 @synthesize treeStartView;
 @synthesize cowStartView;
 @synthesize factoryStartView;
+@synthesize moneyLabel;
+@synthesize groundView;
 @synthesize plotViews;
 @synthesize gameManager;
 @synthesize pollutionView;
@@ -62,6 +64,8 @@
 	panGestureRecognizer.delegate = self;
 	panGestureRecognizer.maximumNumberOfTouches = 1;
 	[factoryStartView addGestureRecognizer:panGestureRecognizer];
+	
+	[self.gameManager start];
 }
 
 - (void)viewDidUnload
@@ -75,6 +79,8 @@
 	self.gameManager = nil;
 	
 	[self setPollutionView:nil];
+	[self setMoneyLabel:nil];
+	[self setGroundView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -86,7 +92,12 @@
 
 
 -(void)notifyGameStateUpdate:(NSNotification*)note {
-	// TODO NOTIFY_GAME_STATE_UPDATE
+	self.moneyLabel.text = [NSString stringWithFormat:@"$%i", self.gameManager.cash];
+	[UIView animateWithDuration:SECONDS_BETWEEN_ROUNDS animations:^(){
+		self.pollutionView.frame = CGRectMake(self.pollutionView.frame.origin.x, self.pollutionView.frame.origin.y, self.pollutionView.frame.size.width,
+											  (self.groundView.frame.origin.y - self.groundView.frame.size.height - self.pollutionView.frame.origin.y) * self.gameManager.pollutionPercent);
+	}];
+	
 }
 
 -(int)indexOfPlotViewAtPoint:(CGPoint)point {

@@ -15,6 +15,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *treeStartView;
 @property (weak, nonatomic) IBOutlet UIImageView *cowStartView;
 @property (weak, nonatomic) IBOutlet UIImageView *factoryStartView;
+@property (weak, nonatomic) IBOutlet UILabel *moneyLabel;
+@property (weak, nonatomic) IBOutlet UIView *groundView;
 @property (strong, nonatomic) IBOutletCollection(UIView) NSArray *plotViews;
 
 @property (retain, nonatomic) JKGameManager *gameManager;

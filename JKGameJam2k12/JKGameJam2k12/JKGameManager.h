@@ -10,6 +10,7 @@
 #import "JKGrowthType.h"
 
 #define MAXIMUM_NUMBER_OF_PLOTS 8
+#define SECONDS_BETWEEN_ROUNDS 1
 #define NOTIFY_GAME_STATE_UPDATE	(@"NOTIFY_GAME_STATE_UPDATE")
 
 @interface JKGameManager : NSObject

@@ -10,7 +10,7 @@
 #import "JKPlot.h"
 
 #define INCREASE_IN_POLLUTION_PER_ROUND 0.01
-#define SECONDS_BETWEEN_ROUNDS 1
+
 
 @interface JKGameManager ()
 
@@ -59,7 +59,7 @@
 	for (JKPlot* plot in self.plots) {
 		if (plot.growthType && plot.height > 0) {
 			self.cash += plot.height * plot.growthType.profit;
-			self.pollutionPercent += plot.height * plot.growthType.pollution;
+			self.pollutionPercent += (plot.height * plot.growthType.pollution) / 100.0;
 		}
 	}
 	
