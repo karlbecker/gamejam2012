@@ -13,7 +13,7 @@
 
 @interface JKGameManager ()
 
-@property (readwrite) float pollutionLevel;	// ranges from 0-1
+@property (readwrite) float pollutionPercent;	// ranges from 0-1
 @property (readwrite) unsigned int cash;
 @property (retain) NSMutableArray* plots;	// with JKPlot objects
 
@@ -21,7 +21,7 @@
 
 @implementation JKGameManager
 
-@synthesize pollutionLevel = _pollutionLevel;
+@synthesize pollutionPercent = _pollutionLevel;
 @synthesize cash = _cash;
 @synthesize plots = _plots;
 
@@ -29,7 +29,7 @@
 	self = [super init];
 	if (self) {
 		self.cash = 500;
-		self.pollutionLevel = 0;
+		self.pollutionPercent = 0;
 		self.plots = [NSMutableArray new];
 		for (int i = 0; i < MAXIMUM_NUMBER_OF_PLOTS; i++) {
 			[self.plots addObject:[JKPlot new]];
@@ -45,17 +45,17 @@
 	for (JKPlot* plot in self.plots) {
 		if (plot.growthType && plot.height > 0) {
 			self.cash += plot.height * plot.growthType.profit;
-			self.pollutionLevel += plot.height * plot.growthType.pollution;
+			self.pollutionPercent += plot.height * plot.growthType.pollution;
 		}
 	}
 	
-	self.pollutionLevel += INCREASE_IN_POLLUTION_PER_ROUND;
+	self.pollutionPercent += INCREASE_IN_POLLUTION_PER_ROUND;
 	
 	// TODO fire notification to update ViewController
 }
 
 -(BOOL)isGameOver {
-	return (self.pollutionLevel >= 1);
+	return (self.pollutionPercent >= 1);
 }
 
 -(BOOL)addGrowthType:(JKGrowthType*)growthType toPlotIndex:(int)index {

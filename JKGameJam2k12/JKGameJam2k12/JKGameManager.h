@@ -13,7 +13,7 @@
 
 @interface JKGameManager : NSObject
 
-@property (readonly) float pollutionLevel;	// ranges from 0-1
+@property (readonly) float pollutionPercent;	// ranges from 0-1
 @property (readonly) unsigned int cash;
 @property (readonly) BOOL isGameOver;
 
