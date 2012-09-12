@@ -11,7 +11,7 @@
 @implementation JKCow
 
 -(float)pollution {
-	return 0.1;
+	return 0.12;
 }
 
 -(unsigned int)cost {

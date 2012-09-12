@@ -133,7 +133,7 @@
 
 -(float)neighboringPollutionForRound:(int)round {
 	float floatRound = round * SECONDS_BETWEEN_ROUNDS;
-	return 0.0001 * floatRound * sqrt(floatRound);
+	return 0.00008 * floatRound;
 }
 
 @end
