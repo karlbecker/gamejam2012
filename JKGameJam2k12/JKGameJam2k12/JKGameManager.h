@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "JKGrowthType.h"
-#import "JKPlot.h"
 
 @interface JKGameManager : NSObject
 
@@ -19,8 +18,8 @@
 -(void)updateState;
 
 // Returns true if the add was successful (i.e. the user had enough cash). Otherwise returns false.
--(BOOL)addGrowthType:(JKGrowthType*)growthType toPlot:(JKPlot*)plot;
+-(BOOL)addGrowthType:(JKGrowthType*)growthType toPlotIndex:(int)index;
 
--(void)remove:(int)numberToRemove fromPlot:(JKPlot*)plot;
+-(void)remove:(int)numberToRemove fromPlotIndex:(int)index;
 
 @end

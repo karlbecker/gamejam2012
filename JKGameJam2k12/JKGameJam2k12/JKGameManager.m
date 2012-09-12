@@ -7,6 +7,7 @@
 //
 
 #import "JKGameManager.h"
+#import "JKPlot.h"
 
 @interface JKGameManager ()
 
@@ -26,11 +27,11 @@
 	
 }
 
--(BOOL)addGrowthType:(JKGrowthType*)growthType toPlot:(JKPlot*)plot {
+-(BOOL)addGrowthType:(JKGrowthType*)growthType toPlotIndex:(int)index {
 	return NO;
 }
 
--(void)remove:(int)numberToRemove fromPlot:(JKPlot*)plot {
+-(void)remove:(int)numberToRemove fromPlotIndex:(int)index {
 	
 }
 
