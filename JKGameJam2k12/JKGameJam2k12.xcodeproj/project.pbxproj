@@ -29,7 +29,6 @@
 		40CC7640160042BD00CDDD7A /* JKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 40CC763F160042BD00CDDD7A /* JKAppDelegate.m */; };
 		40CC7643160042BD00CDDD7A /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40CC7641160042BD00CDDD7A /* MainStoryboard_iPhone.storyboard */; };
 		40CC7646160042BD00CDDD7A /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40CC7644160042BD00CDDD7A /* MainStoryboard_iPad.storyboard */; };
-		40CC7649160042BD00CDDD7A /* JKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40CC7648160042BD00CDDD7A /* JKViewController.m */; };
 		40CC7651160042BD00CDDD7A /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40CC7650160042BD00CDDD7A /* SenTestingKit.framework */; };
 		40CC7652160042BD00CDDD7A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40CC762F160042BD00CDDD7A /* UIKit.framework */; };
 		40CC7653160042BD00CDDD7A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40CC7631160042BD00CDDD7A /* Foundation.framework */; };
@@ -81,8 +80,6 @@
 		40CC763F160042BD00CDDD7A /* JKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JKAppDelegate.m; sourceTree = "<group>"; };
 		40CC7642160042BD00CDDD7A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		40CC7645160042BD00CDDD7A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		40CC7647160042BD00CDDD7A /* JKViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JKViewController.h; sourceTree = "<group>"; };
-		40CC7648160042BD00CDDD7A /* JKViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JKViewController.m; sourceTree = "<group>"; };
 		40CC764F160042BD00CDDD7A /* JKGameJam2k12Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JKGameJam2k12Tests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		40CC7650160042BD00CDDD7A /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		40CC7658160042BD00CDDD7A /* JKGameJam2k12Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JKGameJam2k12Tests-Info.plist"; sourceTree = "<group>"; };
@@ -203,8 +200,6 @@
 				40CC763F160042BD00CDDD7A /* JKAppDelegate.m */,
 				40CC7641160042BD00CDDD7A /* MainStoryboard_iPhone.storyboard */,
 				40CC7644160042BD00CDDD7A /* MainStoryboard_iPad.storyboard */,
-				40CC7647160042BD00CDDD7A /* JKViewController.h */,
-				40CC7648160042BD00CDDD7A /* JKViewController.m */,
 				408D822516005CDB00CB3BF3 /* ViewControllers */,
 				408D821416005C9600CB3BF3 /* Resources */,
 				40CC7636160042BD00CDDD7A /* Supporting Files */,
@@ -360,7 +355,6 @@
 			files = (
 				40CC763C160042BD00CDDD7A /* main.m in Sources */,
 				40CC7640160042BD00CDDD7A /* JKAppDelegate.m in Sources */,
-				40CC7649160042BD00CDDD7A /* JKViewController.m in Sources */,
 				1A7C5D781600443C0009795A /* JKGameManager.m in Sources */,
 				1A7C5D7B160044CD0009795A /* JKGrowthType.m in Sources */,
 				1A7C5D7E160045850009795A /* JKPlot.m in Sources */,

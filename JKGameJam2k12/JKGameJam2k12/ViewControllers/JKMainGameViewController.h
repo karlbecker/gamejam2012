@@ -14,4 +14,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *factoryStartView;
 @property (strong, nonatomic) IBOutletCollection(UIView) NSArray *plotViews;
 
+
+//methods to 
+
 @end

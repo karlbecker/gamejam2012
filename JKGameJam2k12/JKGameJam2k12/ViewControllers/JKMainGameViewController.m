@@ -51,6 +51,7 @@
     return (interfaceOrientation == UIInterfaceOrientationLandscapeLeft || interfaceOrientation == UIInterfaceOrientationLandscapeRight);
 }
 
+
 -(void)notifyGameStateUpdate:(NSNotification*)note {
 	// TODO NOTIFY_GAME_STATE_UPDATE
 }
