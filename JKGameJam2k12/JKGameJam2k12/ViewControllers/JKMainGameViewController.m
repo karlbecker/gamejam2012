@@ -15,6 +15,7 @@
 
 -(int)indexOfPlotViewAtPoint:(CGPoint)point;
 -(void)moveView:(UIView*)view toTopOfPlot:(int)index;
+-(BOOL)dropView:(UIView*)view withGrowthType:(JKGrowthType*)growthType atPoint:(CGPoint)point;
 
 @end
 
@@ -88,6 +89,18 @@
 		frame.origin.y -= [self.gameManager heightAtPlotIndex:index] * heightOfGrowthImage;
 		view.frame = frame;
 	} completion:nil];
+}
+
+-(BOOL)dropView:(UIView*)view withGrowthType:(JKGrowthType*)growthType atPoint:(CGPoint)point {
+	int index = [self indexOfPlotViewAtPoint:point];
+	if (index != -1) {
+		if ([self.gameManager addGrowthType:growthType toPlotIndex:index]) {
+			[self moveView:view toTopOfPlot:index];
+			return YES;
+		}
+	}
+	
+	return NO;
 }
 
 @end
