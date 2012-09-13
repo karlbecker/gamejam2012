@@ -9,9 +9,8 @@
 #import "JKSlideImageView.h"
 
 @interface JKSlideImageView ()
-{
-	CGPoint startDragPoint;
-}
+
+@property CGPoint homePoint;
 @property (weak, nonatomic) id <JKSlideImageViewDelegate> delegate;
 
 @end
@@ -20,6 +19,8 @@
 
 -(void)setupWithDelegate:(id <JKSlideImageViewDelegate>)delegate{
 	self.delegate= delegate;
+	
+	self.homePoint = self.center;
 	
 	UIPanGestureRecognizer *panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(startViewDragged:)];
 	panGestureRecognizer.delegate = self;
@@ -35,7 +36,6 @@
 	
 	if( recognizer.state == UIGestureRecognizerStateBegan )
 	{
-		startDragPoint = dragView.center;
 		[recognizer setTranslation:CGPointMake(0.0, 0.0) inView:dragView.superview ];
 	}
 	else if( recognizer.state == UIGestureRecognizerStateChanged )
@@ -47,7 +47,7 @@
 	else if( (recognizer.state == UIGestureRecognizerStateEnded || recognizer.state == UIGestureRecognizerStateCancelled ) )
 	{
 		if (self.delegate && [self.delegate slidImageView:self])			
-			self.center = CGPointMake(startDragPoint.x - self.frame.size.width, startDragPoint.y);
+			self.center = CGPointMake(self.homePoint.x - self.frame.size.width, self.homePoint.y);
 		
 		[self reseatDraggedView:dragView animated:YES];
 	}
@@ -61,7 +61,7 @@
 		duration = 0.0;
 	}
 	[UIImageView animateWithDuration:duration animations:^(){
-		view.center = startDragPoint;
+		view.center = self.homePoint;
 	}];
 }
 
