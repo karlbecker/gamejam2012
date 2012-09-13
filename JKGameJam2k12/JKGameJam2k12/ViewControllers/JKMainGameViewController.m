@@ -12,12 +12,8 @@
 #import "JKTree.h"
 #import "JKFactory.h"
 
-#define ANIMATION_DURATION 0.3
-
 @interface JKMainGameViewController ()
-{
-	CGPoint startDragPoint;
-}
+
 -(int)indexOfPlotViewAtPoint:(CGPoint)point;
 -(void)moveView:(UIView*)view toTopOfPlot:(int)index;
 -(BOOL)dropView:(UIView*)view withGrowthType:(JKGrowthType*)growthType atPoint:(CGPoint)point;
@@ -58,20 +54,9 @@
 	// Do any additional setup after loading the view.
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notifyGameStateUpdate:) name:NOTIFY_GAME_STATE_UPDATE object:nil];
 	
-	UIPanGestureRecognizer *panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(startViewDragged:)];
-	panGestureRecognizer.delegate = self;
-	panGestureRecognizer.maximumNumberOfTouches = 1;
-	[treeStartView addGestureRecognizer:panGestureRecognizer];
-	
-	panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(startViewDragged:)];
-	panGestureRecognizer.delegate = self;
-	panGestureRecognizer.maximumNumberOfTouches = 1;
-	[cowStartView addGestureRecognizer:panGestureRecognizer];
-	
-	panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(startViewDragged:)];
-	panGestureRecognizer.delegate = self;
-	panGestureRecognizer.maximumNumberOfTouches = 1;
-	[factoryStartView addGestureRecognizer:panGestureRecognizer];
+	[self.factoryStartView setupWithDelegate:self];
+	[self.cowStartView setupWithDelegate:self];
+	[self.treeStartView setupWithDelegate:self];
 	
 	JKGrowthType* growthType;
 	growthType = [JKFactory new];
@@ -166,8 +151,7 @@
 	return NO;
 }
 
-
-- (JKGrowthType *)growthTypeOf:(UIView *)view
+- (JKGrowthType *)growthTypeOf:(JKSlideImageView *)view
 {
 	if( view == treeStartView )
 		return [JKTree new];
@@ -175,59 +159,6 @@
 		return [JKCow new];
 	else
 		return [JKFactory new];
-}
-
-- (void)reseatDraggedView:(UIView *)view animated:(BOOL)isAnimated
-{
-	float duration = ANIMATION_DURATION;
-	if( !isAnimated )
-	{
-		duration = 0.0;
-	}
-		[UIImageView animateWithDuration:duration animations:^(){
-			view.center = startDragPoint;
-		}];
-}
-
-#pragma mark - Gesture Recognizer responses
-
-- (void)startViewDragged:(UIPanGestureRecognizer *)recognizer
-{
-	UIImageView *dragView = (UIImageView *)recognizer.view;
-	
-	if( recognizer.state == UIGestureRecognizerStateBegan )
-	{
-		startDragPoint = dragView.center;
-		[recognizer setTranslation:CGPointMake(0.0, 0.0) inView:dragView.superview ];
-	}
-	else if( recognizer.state == UIGestureRecognizerStateChanged )
-	{
-		CGPoint translation = [recognizer translationInView:dragView.superview];
-		dragView.center = CGPointMake(dragView.center.x + translation.x, dragView.center.y + translation.y);
-		[recognizer setTranslation:CGPointMake(0.0, 0.0) inView:dragView.superview];
-	}
-	else if( (recognizer.state == UIGestureRecognizerStateEnded || recognizer.state == UIGestureRecognizerStateCancelled ) )
-	{
-		if( [self indexOfPlotViewAtPoint:dragView.center] >= 0 )
-		{
-			UIImageView *newSprite = [[UIImageView alloc] initWithImage:dragView.image];
-			newSprite.frame = dragView.frame;
-			[self.viewsToClearOnNewGame addObject:newSprite];
-			[self.view addSubview:newSprite];
-			
-			if( [self dropView:newSprite withGrowthType:[self growthTypeOf:dragView] atPoint:dragView.center] )
-			{
-				dragView.center = CGPointMake(startDragPoint.x - dragView.frame.size.width, startDragPoint.y);
-				[self reseatDraggedView:dragView animated:YES];
-				return;
-			}
-			else
-			{
-				[newSprite removeFromSuperview];
-			}
-		}
-		[self reseatDraggedView:dragView animated:YES];
-	}
 }
 
 - (void)restartGame
@@ -260,5 +191,28 @@
 		[self.view bringSubviewToFront:finalScoreLabel];
 	}
 }
-	 
+
+#pragma mark - SlideImageView
+
+- (BOOL)slidImageView:(JKSlideImageView*)imageView {
+	if( [self indexOfPlotViewAtPoint:imageView.center] >= 0 )
+	{
+		UIImageView *newSprite = [[UIImageView alloc] initWithImage:imageView.image];
+		newSprite.frame = imageView.frame;
+		[self.viewsToClearOnNewGame addObject:newSprite];
+		[self.view addSubview:newSprite];
+		
+		if( [self dropView:newSprite withGrowthType:[self growthTypeOf:imageView] atPoint:imageView.center] )
+		{
+			return YES;
+		}
+		else
+		{
+			[newSprite removeFromSuperview];
+		}
+	}
+	
+	return NO;
+}
+
 @end

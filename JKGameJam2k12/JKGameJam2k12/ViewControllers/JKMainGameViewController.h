@@ -8,13 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "JKGameManager.h"
+#import "JKSlideImageView.h"
 
 
-
-@interface JKMainGameViewController : UIViewController <UIGestureRecognizerDelegate>
-@property (weak, nonatomic) IBOutlet UIImageView *treeStartView;
-@property (weak, nonatomic) IBOutlet UIImageView *cowStartView;
-@property (weak, nonatomic) IBOutlet UIImageView *factoryStartView;
+@interface JKMainGameViewController : UIViewController <UIGestureRecognizerDelegate, JKSlideImageViewDelegate>
+@property (weak, nonatomic) IBOutlet JKSlideImageView *treeStartView;
+@property (weak, nonatomic) IBOutlet JKSlideImageView *cowStartView;
+@property (weak, nonatomic) IBOutlet JKSlideImageView *factoryStartView;
 @property (weak, nonatomic) IBOutlet UILabel *moneyLabel;
 @property (weak, nonatomic) IBOutlet UIView *groundView;
 @property (strong, nonatomic) IBOutletCollection(UIView) NSArray *plotViews;

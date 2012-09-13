@@ -13,6 +13,7 @@
 		1A7C5D81160049320009795A /* JKCow.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7C5D80160049320009795A /* JKCow.m */; };
 		1A7C5D9416004DD60009795A /* JKFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7C5D9316004DD60009795A /* JKFactory.m */; };
 		1A7C5D9816004E170009795A /* JKTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7C5D9716004E160009795A /* JKTree.m */; };
+		1AE672981602351B003473CA /* JKSlideImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE672971602351B003473CA /* JKSlideImageView.m */; };
 		408D821E16005CA200CB3BF3 /* cow1.png in Resources */ = {isa = PBXBuildFile; fileRef = 408D821716005CA200CB3BF3 /* cow1.png */; };
 		408D821F16005CA200CB3BF3 /* cow_start.png in Resources */ = {isa = PBXBuildFile; fileRef = 408D821816005CA200CB3BF3 /* cow_start.png */; };
 		408D822016005CA200CB3BF3 /* factory1.png in Resources */ = {isa = PBXBuildFile; fileRef = 408D821916005CA200CB3BF3 /* factory1.png */; };
@@ -59,6 +60,8 @@
 		1A7C5D9316004DD60009795A /* JKFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKFactory.m; sourceTree = "<group>"; };
 		1A7C5D9616004E160009795A /* JKTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKTree.h; sourceTree = "<group>"; };
 		1A7C5D9716004E160009795A /* JKTree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKTree.m; sourceTree = "<group>"; };
+		1AE672961602351B003473CA /* JKSlideImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKSlideImageView.h; sourceTree = "<group>"; };
+		1AE672971602351B003473CA /* JKSlideImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKSlideImageView.m; sourceTree = "<group>"; };
 		408D821716005CA200CB3BF3 /* cow1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cow1.png; sourceTree = "<group>"; };
 		408D821816005CA200CB3BF3 /* cow_start.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cow_start.png; sourceTree = "<group>"; };
 		408D821916005CA200CB3BF3 /* factory1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = factory1.png; sourceTree = "<group>"; };
@@ -198,6 +201,8 @@
 				1A7C5D741600441A0009795A /* GameManager */,
 				40CC763E160042BD00CDDD7A /* JKAppDelegate.h */,
 				40CC763F160042BD00CDDD7A /* JKAppDelegate.m */,
+				1AE672961602351B003473CA /* JKSlideImageView.h */,
+				1AE672971602351B003473CA /* JKSlideImageView.m */,
 				40CC7641160042BD00CDDD7A /* MainStoryboard_iPhone.storyboard */,
 				40CC7644160042BD00CDDD7A /* MainStoryboard_iPad.storyboard */,
 				408D822516005CDB00CB3BF3 /* ViewControllers */,
@@ -362,6 +367,7 @@
 				1A7C5D9416004DD60009795A /* JKFactory.m in Sources */,
 				1A7C5D9816004E170009795A /* JKTree.m in Sources */,
 				408D822816005CDB00CB3BF3 /* JKMainGameViewController.m in Sources */,
+				1AE672981602351B003473CA /* JKSlideImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

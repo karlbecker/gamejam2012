@@ -31,15 +31,15 @@
                                 <rect key="frame" x="0.0" y="452" width="90" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" image="cow_start.png" id="8Tn-du-QAw">
+                            <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" image="cow_start.png" id="8Tn-du-QAw" customClass="JKSlideImageView">
                                 <rect key="frame" x="8" y="222" width="75" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" image="tree1.png" id="rC5-wk-ZyJ">
+                            <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" image="tree1.png" id="rC5-wk-ZyJ" customClass="JKSlideImageView">
                                 <rect key="frame" x="8" y="377" width="75" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" image="factory1.png" id="pWG-eZ-hEc">
+                            <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" image="factory1.png" id="pWG-eZ-hEc" customClass="JKSlideImageView">
                                 <rect key="frame" x="8" y="38" width="78" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -210,21 +210,24 @@
             <relationships>
                 <relationship kind="action" name="restartButtonTapped:"/>
                 <relationship kind="outlet" name="cowCostLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="cowProfitLabel" candidateClass="UIView"/>
-                <relationship kind="outlet" name="cowStartView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="cowProfitLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="cowStartView" candidateClass="JKSlideImageView"/>
                 <relationship kind="outlet" name="factoryCostLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="factoryProfitLabel" candidateClass="UIView"/>
-                <relationship kind="outlet" name="factoryStartView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="factoryProfitLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="factoryStartView" candidateClass="JKSlideImageView"/>
                 <relationship kind="outlet" name="finalScoreLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="groundView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="moneyLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="pollutionView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="restartButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="treeCostLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="treeProfitLabel" candidateClass="UIView"/>
-                <relationship kind="outlet" name="treeStartView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="treeProfitLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="treeStartView" candidateClass="JKSlideImageView"/>
                 <relationship kind="outletCollection" name="plotViews" candidateClass="UIView"/>
             </relationships>
+        </class>
+        <class className="JKSlideImageView" superclassName="UIImageView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/JKSlideImageView.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
