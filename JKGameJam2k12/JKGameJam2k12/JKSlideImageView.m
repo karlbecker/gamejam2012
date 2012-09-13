@@ -10,22 +10,22 @@
 
 @interface JKSlideImageView ()
 
-@property CGPoint homePoint;
-@property (weak, nonatomic) id <JKSlideImageViewDelegate> delegate;
-
 @end
 
 @implementation JKSlideImageView
+@synthesize delegate;
 
--(void)setupWithDelegate:(id <JKSlideImageViewDelegate>)delegate{
-	self.delegate= delegate;
-	
-	self.homePoint = self.center;
-	
-	UIPanGestureRecognizer *panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(startViewDragged:)];
-	panGestureRecognizer.delegate = self;
-	panGestureRecognizer.maximumNumberOfTouches = 1;
-	[self addGestureRecognizer:panGestureRecognizer];
+- (id)initWithCoder:(NSCoder *)coder {
+    self = [super initWithCoder:coder];
+    if (self) {
+		self.homePoint = self.center;
+		
+		UIPanGestureRecognizer *panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(startViewDragged:)];
+		panGestureRecognizer.delegate = self;
+		panGestureRecognizer.maximumNumberOfTouches = 1;
+		[self addGestureRecognizer:panGestureRecognizer];
+    }
+    return self;
 }
 
 #pragma mark - Gesture Recognizer responses

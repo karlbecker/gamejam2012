@@ -54,9 +54,9 @@
 	// Do any additional setup after loading the view.
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notifyGameStateUpdate:) name:NOTIFY_GAME_STATE_UPDATE object:nil];
 	
-	[self.factoryStartView setupWithDelegate:self];
-	[self.cowStartView setupWithDelegate:self];
-	[self.treeStartView setupWithDelegate:self];
+	self.factoryStartView.delegate = self;
+	self.cowStartView.delegate = self;
+	self.treeStartView.delegate = self;
 	
 	JKGrowthType* growthType;
 	growthType = [JKFactory new];

@@ -19,6 +19,9 @@
 
 @interface JKSlideImageView : UIImageView <UIGestureRecognizerDelegate>
 
--(void)setupWithDelegate:(id <JKSlideImageViewDelegate>)delegate;
+@property (weak, nonatomic) id <JKSlideImageViewDelegate> delegate;
+
+// The home point is set automatically for InterfaceBuilder (in initWithCoder) but must be set manually in all other cases.
+@property CGPoint homePoint;
 
 @end
