@@ -24,6 +24,9 @@
 @property (strong, nonatomic) IBOutlet UILabel *factoryProfitLabel;
 @property (strong, nonatomic) IBOutlet UILabel *cowProfitLabel;
 @property (strong, nonatomic) IBOutlet UILabel *treeProfitLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *groundImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *skyImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *pollutionImageView;
 
 @property (retain, nonatomic) JKGameManager *gameManager;
 @property (weak, nonatomic) IBOutlet UIView *pollutionView;
@@ -31,6 +34,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *finalScoreLabel;
 - (IBAction)restartButtonTapped:(id)sender;
 
+- (IBAction)configButtonTapped:(id)sender;
 @property (retain, nonatomic) NSMutableArray *viewsToClearOnNewGame;
 
 @end

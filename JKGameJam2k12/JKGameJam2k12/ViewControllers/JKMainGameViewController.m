@@ -11,8 +11,14 @@
 #import "JKCow.h"
 #import "JKTree.h"
 #import "JKFactory.h"
+#import "KBImageSource.h"
+#import "KBImageSourcePickerViewController.h"
+
 
 @interface JKMainGameViewController ()
+{
+	id imageNotification;
+}
 
 -(int)indexOfPlotViewAtPoint:(CGPoint)point;
 -(void)moveView:(UIView*)view toTopOfPlot:(int)index;
@@ -71,6 +77,27 @@
 	
 	self.viewsToClearOnNewGame = [NSMutableArray arrayWithCapacity:0];
 	
+	imageNotification = [[NSNotificationCenter defaultCenter] addObserverForName:NOTIFY_IMAGE_DOWNLOADS_COMPLETE
+																		  object:nil queue:nil
+																	  usingBlock:^(NSNotification *note){
+																		  if( nil != [[KBImageSource sharedSingeton] imageNamed:@"tree1.png"] )
+																			  self.treeStartView.image = [[KBImageSource sharedSingeton] imageNamed:@"tree1.png"];
+																		  
+																		  if( nil != [[KBImageSource sharedSingeton] imageNamed:@"cow1.png"] )
+																			  self.cowStartView.image = [[KBImageSource sharedSingeton] imageNamed:@"cow1.png"];
+																		  
+																		  if( nil != [[KBImageSource sharedSingeton] imageNamed:@"factory1.png"] )
+																			  self.factoryStartView.image = [[KBImageSource sharedSingeton] imageNamed:@"factory1.png"];
+																		  
+																		  if( nil != [[KBImageSource sharedSingeton] imageNamed:@"ground1.png"] )
+																			  self.groundImageView.image = [[KBImageSource sharedSingeton] imageNamed:@"ground1.png"];
+																		  
+																		  if( nil != [[KBImageSource sharedSingeton] imageNamed:@"sky1.png"] )
+																			  self.skyImageView.image = [[KBImageSource sharedSingeton] imageNamed:@"sky1.png"];
+																		  
+																		  if( nil != [[KBImageSource sharedSingeton] imageNamed:@"pollution1.png"] )
+																			  self.pollutionImageView.image = [[KBImageSource sharedSingeton] imageNamed:@"pollution1.png"];
+																	  }];
 	[self.view bringSubviewToFront:pollutionView];
 	
 	[self restartGame];
@@ -97,6 +124,9 @@
     [self setFactoryProfitLabel:nil];
     [self setCowProfitLabel:nil];
     [self setTreeProfitLabel:nil];
+	[self setGroundImageView:nil];
+	[self setSkyImageView:nil];
+	[self setPollutionImageView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -176,6 +206,15 @@
 - (IBAction)restartButtonTapped:(id)sender
 {
 	[self restartGame];
+}
+
+- (IBAction)configButtonTapped:(id)sender
+{
+	KBImageSourcePickerViewController *pickerVC = [[KBImageSourcePickerViewController alloc] init];
+	pickerVC.fileNames = [NSArray arrayWithObjects:@"cow1.png", @"tree1.png", @"factory1.png", @"pollution1.png", @"ground1.png", @"sky1.png", nil];
+	pickerVC.modalPresentationStyle = UIModalPresentationFormSheet;
+	[self presentModalViewController:pickerVC animated:YES];
+	
 }
 
 -(void)gameEnded:(NSTimer*)timer
