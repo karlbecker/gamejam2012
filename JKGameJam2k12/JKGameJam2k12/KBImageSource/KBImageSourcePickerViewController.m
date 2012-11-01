@@ -33,6 +33,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+	[self.baseURLTextField becomeFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning
