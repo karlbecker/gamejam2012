@@ -240,6 +240,7 @@
 		newSprite.frame = imageView.frame;
 		[self.viewsToClearOnNewGame addObject:newSprite];
 		[self.view addSubview:newSprite];
+		[self.view bringSubviewToFront:pollutionView];
 		
 		if( [self dropView:newSprite withGrowthType:[self growthTypeOf:imageView] atPoint:imageView.center] )
 		{
