@@ -114,6 +114,11 @@
     return NO;
 }
 
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+{
+	return YES;
+}
+
 #pragma mark - KBImageSourceDelegate
 - (void)progressLogged:(NSString *)progressString
 {
